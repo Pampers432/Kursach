@@ -16,6 +16,8 @@ namespace Kursach
         public int Location_Id { get; set; }
         public string Name { get; set; }
         public string PopulationBefore { get; set; }
+
+        [DataType(DataType.Date)]
         public DateTime DateDestroyed { get; set; }
         public string Cause { get; set; }
         public bool MemorialExists { get; set; }
@@ -43,6 +45,8 @@ namespace Kursach
         [ForeignKey("Location")]
         public int Location_Id { get; set; }
         public string Name { get; set; }
+
+        [DataType(DataType.Date)]
         public DateTime InstallationDate { get; set; }
         public string Cause { get; set; }
         public string? ImagePath { get; set; }
@@ -58,7 +62,11 @@ namespace Kursach
         [ForeignKey("Location")]
         public int Location_Id { get; set; }
         public string Name { get; set; }
+
+        [DataType(DataType.Date)]
         public DateTime EstablishedDate { get; set; }
+
+        [DataType(DataType.Date)]
         public DateTime LiquidationDate { get; set; }
         public int VictimsCount { get; set; }
         public int Population { get; set; }
@@ -75,6 +83,8 @@ namespace Kursach
         [ForeignKey("Location")]
         public int Location_Id { get; set; }
         public string Name { get; set; }
+
+        [DataType(DataType.Date)]
         public DateTime InstallationDate { get; set; }
         public string Cause { get; set; }
         public int VictimsCount { get; set; }
@@ -93,7 +103,11 @@ namespace Kursach
         public string LastName { get; set; }
         public string Name { get; set; }
         public string MiddleName { get; set; }
+
+        [DataType(DataType.Date)]
         public DateTime BirthDate { get; set; }
+
+        [DataType(DataType.Date)]
         public DateTime DeathDate { get; set; }
         public string? ImagePath { get; set; }
         public string Description { get; set; }
