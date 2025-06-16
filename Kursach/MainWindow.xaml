@@ -8,7 +8,7 @@
 
     <Grid>
         <Image x:Name="img"
-               Source="/Images/Map.jpg"
+               Source="/Map.png"
                HorizontalAlignment="Right"
                VerticalAlignment="Top"
                Margin="0,21,771,0" 
@@ -20,7 +20,7 @@
                    Height="600" 
                    Stroke="Black"
                    Fill="Gray"
-                   Margin="0,21,10,0"/>
+                   Margin="0,21,18,0"/>
 
         <Button Content="◀" Width="50" Height="50"
                 HorizontalAlignment="Left"
@@ -29,12 +29,12 @@
         <Button Content="▶" Width="50" Height="50"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                Margin="798,291,0,0"/>
-        <Button Content="Справка" Margin="879,648,488,191"/>
-        <Button Content="Очистить" Margin="1100,648,267,191" Click="Button_Click"/>
-        <Button Content="Жертвы" Margin="1357,648,10,192"/>
+                Margin="784,291,0,0"/>
+        <Button Content="Справка" Margin="871,648,496,191"/>
+        <Button Content="Очистить" Margin="1092,648,275,191" Click="Button_Click"/>
+        <Button Content="Жертвы" Margin="1349,648,18,192"/>
 
         <TextBlock x:Name="Info" Text="{Binding LongText}" 
-           TextWrapping="Wrap" Margin="878,21,10,254"/>
+           TextWrapping="Wrap" Margin="870,21,18,254"/>
     </Grid>
 </Window>
