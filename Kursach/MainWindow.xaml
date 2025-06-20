@@ -13,6 +13,10 @@
                VerticalAlignment="Top"
                Margin="0,21,771,0" 
                Width="700" Height="600" Stretch="Fill"/>
+        <TextBlock x:Name="textBlock" Text="Нет изображения" FontSize="16" FontWeight="Bold" Margin="0,-250,700,0"
+               HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed"/>
+        <Image/>
+
 
         <Rectangle HorizontalAlignment="Right" 
                    VerticalAlignment="Top" 
@@ -35,6 +39,11 @@
         <Button Content="Жертвы" Margin="1349,648,18,192"/>
 
         <TextBlock x:Name="Info" Text="{Binding LongText}" 
-           TextWrapping="Wrap" Margin="870,21,18,254"/>
+           TextWrapping="Wrap" Margin="870,21,18,254" FontSize="16"/>
+        
+        <Button x:Name="Vil1" HorizontalAlignment="Left" Margin="163,438,0,0" VerticalAlignment="Top"
+        Width="25" Height="25" Background="Transparent" BorderThickness="0" Click="Vil1_Click">
+            <Image Source="/Village.png" Stretch="Uniform"/>
+        </Button>
     </Grid>
 </Window>
