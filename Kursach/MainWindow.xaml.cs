@@ -48,23 +48,9 @@ namespace Kursach
         {
             // Устанавливаем текст в `TextBox`
             Info.Text = $@"
-                {village.Name}
+                Деревня {village.Name}
 
-                Расположение: {location.Region}, {location.District}
-                Координаты: {location.Latitude}, {location.Longitude}
-
-                === История ===
-                {village.Description}
-
-                === Демография ===
-                Население до уничтожения: {village.PopulationBefore}
-
-                === Разрушение деревни ===
-                Дата уничтожения: {village.DateDestroyed:dd MMMM yyyy}
-                Причина: {village.Cause}
-
-                === Память ===
-                Существует мемориал: {(village.MemorialExists ? "Да" : "Нет")}
+                Расположенная в {location.Region}, {location.District} (координаты: {location.Latitude}, {location.Longitude}), до трагических событий насчитывала {village.PopulationBefore} жителей. {village.DateDestroyed:dd MMMM yyyy} года поселение было уничтожено в результате {village.Cause.ToLower()}. {(village.MemorialExists ? "На месте трагедии установлен мемориальный комплекс." : "Мемориал на месте событий отсутствует.")}
                 ";
 
             // Загружает изображение в `Image` компонент
