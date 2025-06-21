@@ -27,9 +27,41 @@ namespace Kursach
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            textBlock.Visibility = Visibility.Collapsed;
-            img.Source = new BitmapImage(new Uri("/Map.png", UriKind.Relative));            
+                       
         }
+
+        private void Village_Click(object sender, RoutedEventArgs e)
+        {
+            Village_Img.Visibility =
+                Village_Img.Visibility == Visibility.Visible
+                ? Visibility.Collapsed
+                : Visibility.Visible;
+        }
+
+        private void Ghetto_Click(object sender, RoutedEventArgs e)
+        {
+            Ghetto_Img.Visibility =
+                Ghetto_Img.Visibility == Visibility.Visible
+                ? Visibility.Collapsed
+                : Visibility.Visible;
+        }
+
+        private void MassGrave_Click(object sender, RoutedEventArgs e)
+        {
+            MassGrave_Img.Visibility =
+                MassGrave_Img.Visibility == Visibility.Visible
+                ? Visibility.Collapsed
+                : Visibility.Visible;
+        }
+
+        private void Monument_Click(object sender, RoutedEventArgs e)
+        {
+            Monument_Img.Visibility =
+                Monument_Img.Visibility == Visibility.Visible
+                ? Visibility.Collapsed
+                : Visibility.Visible;
+        }
+
 
         private void Vil1_Click(object sender, RoutedEventArgs e)
         {
