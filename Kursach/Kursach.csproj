@@ -9,7 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Ghetto.png" />
     <None Remove="Map.png" />
+    <None Remove="MassGrave.png" />
+    <None Remove="Monument.png" />
     <None Remove="Village.png" />
   </ItemGroup>
 
@@ -18,7 +21,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Ghetto.png" />
     <Resource Include="Map.png" />
+    <Resource Include="MassGrave.png" />
+    <Resource Include="Monument.png" />
     <Resource Include="Village.png" />
   </ItemGroup>
 
