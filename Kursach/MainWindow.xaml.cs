@@ -25,11 +25,37 @@ namespace Kursach
 
         }
 
+        // Кнопка очистки
         private void Button_Click(object sender, RoutedEventArgs e)
         {
                        
         }
 
+        private void SearchIcon_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Клик по значку выполнен!");
+        }
+
+
+        private void Search_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (Search.Text == "Поиск")
+            {
+                Search.Text = "";
+                Search.Foreground = Brushes.Black;
+            }
+        }
+
+        private void Search_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(Search.Text))
+            {
+                Search.Text = "Поиск";
+                Search.Foreground = Brushes.Gray;
+            }
+        }
+
+        
         private void Village_Click(object sender, RoutedEventArgs e)
         {
             Village_Img.Visibility =

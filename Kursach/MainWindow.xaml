@@ -28,10 +28,17 @@
         <!-- Поле поиска -->
         <Rectangle HorizontalAlignment="Left" Height="50" Margin="23,10,0,0" Fill="LightGray"
                    Stroke="Black" VerticalAlignment="Top" Width="481"/>
-        <TextBox HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="16" Background="Transparent"
-                 Margin="23,10,0,0" TextWrapping="Wrap" Text="Поиск" VerticalAlignment="Top" Width="446" Height="50"/>
-        <TextBlock HorizontalAlignment="Left" Margin="474,25,0,0" TextWrapping="Wrap"
-                   FontFamily="Segoe MDL2 Assets" FontSize="20" Text="" VerticalAlignment="Top"/>
+        <TextBox x:Name="Search"
+         Text="Поиск" FontSize="16" VerticalContentAlignment="Center" Background="Transparent"
+         Margin="23,10,1081,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="446" Height="50"
+         GotFocus="Search_GotFocus" LostFocus="Search_LostFocus" />
+
+        <Button Click="SearchIcon_Click"
+        HorizontalAlignment="Left" Height="50" Width="35" Margin="469,10,0,815"
+        Background="Transparent" BorderThickness="0" Cursor="Hand">
+            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="20" Text="" />
+        </Button>
+
 
         <!-- Фильтры -->
         <!-- Кнопка деревни -->
