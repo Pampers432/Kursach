@@ -28,7 +28,17 @@ namespace Kursach
         // Кнопка очистки
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-                       
+            Search.Text = "";
+            if (string.IsNullOrWhiteSpace(Search.Text))
+            {
+                Search.Text = "Поиск";
+                Search.Foreground = Brushes.Gray;
+            }
+
+            Village_Img.Visibility = Visibility.Visible;
+            Ghetto_Img.Visibility = Visibility.Visible;
+            MassGrave_Img.Visibility = Visibility.Visible;
+            Monument_Img.Visibility = Visibility.Visible;
         }
 
         private void SearchIcon_Click(object sender, RoutedEventArgs e)
