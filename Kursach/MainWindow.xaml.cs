@@ -18,11 +18,28 @@ namespace Kursach
     /// </summary>
     public partial class MainWindow : Window
     {
+        public bool VillageVisibility = true;
+        public bool GhettoVisibility = true;
+        public bool MonumentVisibility = true;
+        public bool MassGraveVisibility = true;
+
+        List<Image> Villages;
+        List<Image> Ghettos;
+        List<Image> MassGraves;
+        List<Image> Monuments;
+
         public MainWindow()
         {
             InitializeComponent();
             MyDBContext.InitializeDatabase();
 
+            Villages = new List<Image>
+            {
+                Хатынь
+            };
+            Ghettos = new List<Image>();
+            MassGraves = new List<Image>();
+            Monuments = new List<Image>();
         }
 
         // Кнопка очистки
@@ -65,13 +82,17 @@ namespace Kursach
             }
         }
 
-        
+
         private void Village_Click(object sender, RoutedEventArgs e)
         {
             Village_Img.Visibility =
                 Village_Img.Visibility == Visibility.Visible
                 ? Visibility.Collapsed
                 : Visibility.Visible;
+
+            VillageVisibility = Village_Img.Visibility == Visibility.Visible;
+
+            ChangeVisibility(Villages, VillageVisibility);
         }
 
         private void Ghetto_Click(object sender, RoutedEventArgs e)
@@ -80,6 +101,10 @@ namespace Kursach
                 Ghetto_Img.Visibility == Visibility.Visible
                 ? Visibility.Collapsed
                 : Visibility.Visible;
+
+            GhettoVisibility = Ghetto_Img.Visibility == Visibility.Visible;
+
+            ChangeVisibility(Ghettos, GhettoVisibility);
         }
 
         private void MassGrave_Click(object sender, RoutedEventArgs e)
@@ -88,6 +113,10 @@ namespace Kursach
                 MassGrave_Img.Visibility == Visibility.Visible
                 ? Visibility.Collapsed
                 : Visibility.Visible;
+
+            MassGraveVisibility = MassGrave_Img.Visibility == Visibility.Visible;
+
+            ChangeVisibility(MassGraves, MassGraveVisibility);
         }
 
         private void Monument_Click(object sender, RoutedEventArgs e)
@@ -96,7 +125,23 @@ namespace Kursach
                 Monument_Img.Visibility == Visibility.Visible
                 ? Visibility.Collapsed
                 : Visibility.Visible;
+
+            MonumentVisibility = Monument_Img.Visibility == Visibility.Visible;
+
+            ChangeVisibility(Monuments, MonumentVisibility);
         }
+
+        public void ChangeVisibility(List<Image> images, bool VisibilityP)
+        {
+            if (VisibilityP) 
+                foreach (Image image in images) 
+                    image.Visibility = Visibility.Visible;
+            
+            else 
+                foreach(Image image in images) 
+                    image.Visibility = Visibility.Collapsed;
+        }
+
 
 
         private void Vil1_Click(object sender, RoutedEventArgs e)
