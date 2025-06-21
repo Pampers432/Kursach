@@ -9,31 +9,17 @@
     <Grid>
         <Image x:Name="img"
                Source="/Map.png"
-               HorizontalAlignment="Right"
-               VerticalAlignment="Top"
-               Margin="0,21,771,0" 
-               Width="700" Height="600" Stretch="Fill"/>
+               HorizontalAlignment="Left"
+               VerticalAlignment="Center" 
+               Width="1026" Height="875" Stretch="Fill" Margin="524,0,0,0"/>
         <TextBlock x:Name="textBlock" Text="Нет изображения" FontSize="16" FontWeight="Bold" Margin="0,-250,700,0"
                HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed"/>
-        <Image/>
+        <Button Content="Справка" Margin="23,794,1297,28" FontSize="16"/>
+        <Button Content="Очистить" Margin="660,795,660,27" FontSize="16" Click="Button_Click"/>
+        <Button Content="Жертвы" Margin="273,795,1046,28" FontSize="16"/>
 
-
-        <Rectangle HorizontalAlignment="Right" 
-                   VerticalAlignment="Top" 
-                   Width="662" 
-                   Height="600" 
-                   Stroke="Black"
-                   Fill="Gray"
-                   Margin="0,21,18,0"/>
-        <Button Content="Справка" Margin="871,648,496,191"/>
-        <Button Content="Очистить" Margin="1092,648,275,191" Click="Button_Click"/>
-        <Button Content="Жертвы" Margin="1349,648,18,192"/>
-
-        <TextBlock x:Name="Info" Text="{Binding LongText}" 
-           TextWrapping="Wrap" Margin="870,21,18,254" FontSize="16"/>
-        
-        <Button x:Name="Vil1" HorizontalAlignment="Left" Margin="163,438,0,0" VerticalAlignment="Top"
-        Width="25" Height="25" Background="Transparent" BorderThickness="0" Click="Vil1_Click">
+        <Button x:Name="Vil1" HorizontalAlignment="Left" Margin="804,605,0,0" VerticalAlignment="Top"
+        Width="35" Height="35" Background="Transparent" BorderThickness="0" Click="Vil1_Click">
             <Image Source="/Village.png" Stretch="Uniform"/>
         </Button>
     </Grid>

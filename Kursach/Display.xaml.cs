@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 namespace Kursach
 {
     /// <summary>
-    /// Логика взаимодействия для Display.xaml
+    /// Логика взаимодействия для Window1.xaml
     /// </summary>
     public partial class Display : Window
     {
@@ -23,5 +23,12 @@ namespace Kursach
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Info.Text = "";
+            textBlock.Visibility = Visibility.Collapsed;
+            img.Source = new BitmapImage(new Uri("/Map.png", UriKind.Relative));
+        }        
     }
 }
