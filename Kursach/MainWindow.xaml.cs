@@ -45,18 +45,58 @@ namespace Kursach
         // Кнопка очистки
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Search.Text = "";
-            if (string.IsNullOrWhiteSpace(Search.Text))
-            {
-                Search.Text = "Поиск";
-                Search.Foreground = Brushes.Gray;
-            }
+            Search.Text = "Поиск";
 
             Village_Img.Visibility = Visibility.Visible;
             Ghetto_Img.Visibility = Visibility.Visible;
             MassGrave_Img.Visibility = Visibility.Visible;
             Monument_Img.Visibility = Visibility.Visible;
+
+            SetAllGroupsVisible();
         }
+
+        private void SetAllGroupsVisible()
+        {
+            ChangeVisibility(Villages, true);
+            ChangeVisibility(Ghettos, true);
+            ChangeVisibility(MassGraves, true);
+            ChangeVisibility(Monuments, true);
+
+            VillageVisibility = true;
+            GhettoVisibility = true;
+            MassGraveVisibility = true;
+            MonumentVisibility = true;
+        }
+
+        public void ChangeVisibility(List<Image> images, bool VisibilityP)
+        {
+            if (VisibilityP)
+                foreach (Image image in images)
+                    image.Visibility = Visibility.Visible;
+
+            else
+                foreach (Image image in images)
+                    image.Visibility = Visibility.Collapsed;
+        }
+
+        private void ToggleVisibility(Image icon, List<Image> group, ref bool visibilityFlag)
+        {
+            icon.Visibility = icon.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            visibilityFlag = icon.Visibility == Visibility.Visible;
+            ChangeVisibility(group, visibilityFlag);
+        }
+
+        private void Village_Click(object sender, RoutedEventArgs e) =>
+            ToggleVisibility(Village_Img, Villages, ref VillageVisibility);
+
+        private void Ghetto_Click(object sender, RoutedEventArgs e) =>
+            ToggleVisibility(Ghetto_Img, Ghettos, ref GhettoVisibility);
+
+        private void MassGrave_Click(object sender, RoutedEventArgs e) =>
+            ToggleVisibility(MassGrave_Img, MassGraves, ref MassGraveVisibility);
+
+        private void Monument_Click(object sender, RoutedEventArgs e) =>
+            ToggleVisibility(Monument_Img, Monuments, ref MonumentVisibility);
 
         private void SearchIcon_Click(object sender, RoutedEventArgs e)
         {
@@ -81,67 +121,6 @@ namespace Kursach
                 Search.Foreground = Brushes.Gray;
             }
         }
-
-
-        private void Village_Click(object sender, RoutedEventArgs e)
-        {
-            Village_Img.Visibility =
-                Village_Img.Visibility == Visibility.Visible
-                ? Visibility.Collapsed
-                : Visibility.Visible;
-
-            VillageVisibility = Village_Img.Visibility == Visibility.Visible;
-
-            ChangeVisibility(Villages, VillageVisibility);
-        }
-
-        private void Ghetto_Click(object sender, RoutedEventArgs e)
-        {
-            Ghetto_Img.Visibility =
-                Ghetto_Img.Visibility == Visibility.Visible
-                ? Visibility.Collapsed
-                : Visibility.Visible;
-
-            GhettoVisibility = Ghetto_Img.Visibility == Visibility.Visible;
-
-            ChangeVisibility(Ghettos, GhettoVisibility);
-        }
-
-        private void MassGrave_Click(object sender, RoutedEventArgs e)
-        {
-            MassGrave_Img.Visibility =
-                MassGrave_Img.Visibility == Visibility.Visible
-                ? Visibility.Collapsed
-                : Visibility.Visible;
-
-            MassGraveVisibility = MassGrave_Img.Visibility == Visibility.Visible;
-
-            ChangeVisibility(MassGraves, MassGraveVisibility);
-        }
-
-        private void Monument_Click(object sender, RoutedEventArgs e)
-        {
-            Monument_Img.Visibility =
-                Monument_Img.Visibility == Visibility.Visible
-                ? Visibility.Collapsed
-                : Visibility.Visible;
-
-            MonumentVisibility = Monument_Img.Visibility == Visibility.Visible;
-
-            ChangeVisibility(Monuments, MonumentVisibility);
-        }
-
-        public void ChangeVisibility(List<Image> images, bool VisibilityP)
-        {
-            if (VisibilityP) 
-                foreach (Image image in images) 
-                    image.Visibility = Visibility.Visible;
-            
-            else 
-                foreach(Image image in images) 
-                    image.Visibility = Visibility.Collapsed;
-        }
-
 
 
         private void Vil1_Click(object sender, RoutedEventArgs e)
