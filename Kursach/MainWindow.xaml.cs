@@ -67,7 +67,7 @@ namespace Kursach
             MassGraveVisibility = true;
             MonumentVisibility = true;
         }
-
+        
         public void ChangeVisibility(List<Image> images, bool VisibilityP)
         {
             if (VisibilityP)
@@ -122,18 +122,36 @@ namespace Kursach
             }
         }
 
-
-        private void Vil1_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Функционал
+        /// </summary>
+        private void Хатынь_Click(object sender, MouseButtonEventArgs e)
         {
             int id = 1;
-
-            //var result = GetVillage(id);
-
-            //var village = result.Keys.First();
-            //var location = result.Values.First();
-
-            //DisplayVillageInfo(village, location);
+            MessageBox.Show("Картинка кликнута!");
         }
+
+        private void Мемориал_Хатынь_Click(object sender, MouseButtonEventArgs e)
+        {
+            int id = 1;
+            MessageBox.Show("Картинка кликнута!");
+        }
+
+
+
+
+
+        //private void Vil1_Click(object sender, RoutedEventArgs e)
+        //{
+        //    int id = 1;
+
+        //    var result = GetVillage(id);
+
+        //    var village = result.Keys.First();
+        //    var location = result.Values.First();
+
+        //    DisplayVillageInfo(village, location);
+        //}
 
         //private void DisplayVillageInfo(Village village, Location location)
         //{

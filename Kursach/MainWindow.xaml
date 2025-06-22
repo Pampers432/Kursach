@@ -7,24 +7,37 @@
         WindowStyle="None">
 
     <Grid>
-        
+
         <!-- Карта -->
         <Image x:Name="img"
                Source="/Map.png"
                HorizontalAlignment="Left"
                VerticalAlignment="Center" 
-               Width="1026" Height="875" Stretch="Fill" Margin="524,0,0,0"/>
-        
+               Width="1026" Height="875" Stretch="UniformToFill" Margin="524,0,0,0"/>
+
         <!-- Кнопки навигации -->
         <Button Content="Справка" Margin="23,794,1297,28" FontSize="16"/>
         <Button Content="Очистить" Margin="660,795,660,27" FontSize="16" Click="Button_Click"/>
         <Button Content="Жертвы" Margin="273,795,1046,28" FontSize="16"/>
 
-        <Button x:Name="Vil1" HorizontalAlignment="Left" Margin="804,605,0,0" VerticalAlignment="Top"
-        Width="35" Height="35" Background="Transparent" BorderThickness="0" Click="Vil1_Click">
-            <Image x:Name="Хатынь" Source="/Village.png" Stretch="Uniform"/>
-        </Button>
+        <Image x:Name="Хатынь" Source="/Village.png" Stretch="UniformToFill"
+               MouseDown="Хатынь_Click" Cursor="Hand" Margin="1223,650,292,190"/>
         
+        <Image x:Name="Мемориал_Хатынь"  Source="/Monument.png" Stretch="UniformToFill"
+               MouseDown="Мемориал_Хатынь_Click" Cursor="Hand" Margin="820,586,695,254"/>
+        
+        <!--Поменять название-->
+        <!--Поменять название-->
+        <!--Поменять название-->
+        <Image x:Name="БратскаяМогила1" Width="35" Height="35" Source="/MassGrave.png" 
+               MouseDown="Мемориал_Хатынь_Click" Cursor="Hand" Stretch="UniformToFill" Margin="775,481,740,359"/>
+        <!--Поменять название-->
+        <!--Поменять название-->
+        <!--Поменять название-->
+        <Image x:Name="Гетто1" Width="35" Height="35" Source="/Ghetto.png" Stretch="UniformToFill"
+               MouseDown="Мемориал_Хатынь_Click" Cursor="Hand"/>
+
+
         <!-- Поле поиска -->
         <Rectangle HorizontalAlignment="Left" Height="50" Margin="23,10,0,0" Fill="LightGray"
                    Stroke="Black" VerticalAlignment="Top" Width="481"/>
@@ -85,6 +98,7 @@
         <Label Content="Еврейские Гетто" FontSize="16" HorizontalAlignment="Left" Margin="87,708,0,0" VerticalAlignment="Top"/>
         <Label Content="Братские Могилы" FontSize="16" HorizontalAlignment="Left" Margin="340,634,0,0" VerticalAlignment="Top"/>
         <Label Content="Монументы" FontSize="16" HorizontalAlignment="Left" Margin="340,708,0,0" VerticalAlignment="Top"/>
-         
+
+
     </Grid>
 </Window>
