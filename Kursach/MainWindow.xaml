@@ -16,8 +16,7 @@
                Width="1026" Height="875" Stretch="UniformToFill" Margin="524,0,0,0"/>
 
         <!-- Кнопки навигации -->
-        <Button Content="Справка" Margin="23,794,1297,28" FontSize="16"/>
-        <Button Content="Очистить" Margin="660,795,660,27" FontSize="16" Click="Button_Click"/>
+        <Button Content="Очистить" Margin="23,795,1297,27" FontSize="16" Click="Button_Click"/>
         <Button Content="Жертвы" Margin="273,795,1046,28" FontSize="16"/>
 
         <Image x:Name="Хатынь" Source="/Village.png" Stretch="UniformToFill"
@@ -98,6 +97,7 @@
         <Label Content="Еврейские Гетто" FontSize="16" HorizontalAlignment="Left" Margin="87,708,0,0" VerticalAlignment="Top"/>
         <Label Content="Братские Могилы" FontSize="16" HorizontalAlignment="Left" Margin="340,634,0,0" VerticalAlignment="Top"/>
         <Label Content="Монументы" FontSize="16" HorizontalAlignment="Left" Margin="340,708,0,0" VerticalAlignment="Top"/>
+        <Label Content="Добавить Гайд по проге" FontSize="45" HorizontalAlignment="Left" Margin="8,312,0,0" VerticalAlignment="Top"/>
 
 
     </Grid>
