@@ -104,20 +104,50 @@ namespace Kursach
 
         private Dictionary<Monument, Location> GetMonument(int monumentId)
         {
-            var result = new Dictionary<Monument, Location>();
-            return result;
+            using (var db = new MyDBContext())
+            {
+                var result = (from m in db.Monuments.AsNoTracking()
+                              join l in db.Locations.AsNoTracking() on m.Location_Id equals l.Id
+                              where m.Id == monumentId
+                              select new { Monument = m, Location = l })
+                             .FirstOrDefault();
+
+                return result != null
+                    ? new Dictionary<Monument, Location> { { result.Monument, result.Location } }
+                    : throw new Exception("Памятник с таким Id не найден");
+            }
         }
 
         private Dictionary<Ghetto, Location> GetGhetto(int ghettoId)
         {
-            var result = new Dictionary<Ghetto, Location>();
-            return result;
+            using (var db = new MyDBContext())
+            {
+                var result = (from g in db.Ghettos.AsNoTracking()
+                              join l in db.Locations.AsNoTracking() on g.Location_Id equals l.Id
+                              where g.Id == ghettoId
+                              select new { Ghetto = g, Location = l })
+                             .FirstOrDefault();
+
+                return result != null
+                    ? new Dictionary<Ghetto, Location> { { result.Ghetto, result.Location } }
+                    : throw new Exception("Гетто с таким Id не найдено");
+            }
         }
 
         private Dictionary<MassGrave, Location> GetMassGrave(int massGraveId)
         {
-            var result = new Dictionary<MassGrave, Location>();
-            return result;
+            using (var db = new MyDBContext())
+            {
+                var result = (from mg in db.MassGraves.AsNoTracking()
+                              join l in db.Locations.AsNoTracking() on mg.Location_Id equals l.Id
+                              where mg.Id == massGraveId
+                              select new { MassGrave = mg, Location = l })
+                             .FirstOrDefault();
+
+                return result != null
+                    ? new Dictionary<MassGrave, Location> { { result.MassGrave, result.Location } }
+                    : throw new Exception("Массовое захоронение с таким Id не найдено");
+            }
         }
     }
 }
