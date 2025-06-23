@@ -23,18 +23,13 @@
                MouseDown="Хатынь_Click" Cursor="Hand" Margin="1223,650,292,190"/>
         
         <Image x:Name="Мемориал_Хатынь"  Source="/Monument.png" Stretch="UniformToFill"
-               MouseDown="Мемориал_Хатынь_Click" Cursor="Hand" Margin="820,586,695,254"/>
-        
-        <!--Поменять название-->
-        <!--Поменять название-->
-        <!--Поменять название-->
-        <Image x:Name="БратскаяМогила1" Width="35" Height="35" Source="/MassGrave.png" 
-               MouseDown="Мемориал_Хатынь_Click" Cursor="Hand" Stretch="UniformToFill" Margin="775,481,740,359"/>
-        <!--Поменять название-->
-        <!--Поменять название-->
-        <!--Поменять название-->
-        <Image x:Name="Гетто1" Width="35" Height="35" Source="/Ghetto.png" Stretch="UniformToFill"
-               MouseDown="Мемориал_Хатынь_Click" Cursor="Hand"/>
+               MouseDown="МемориалХатынь_Click" Cursor="Hand" Margin="820,586,695,254"/>
+
+        <Image x:Name="БратскаяМогилаПриКаменецке"  Source="/MassGrave.png" 
+               MouseDown="БратскаяМогилаПриКаменецке_Click" Cursor="Hand" Stretch="UniformToFill" Margin="775,481,740,359"/>
+
+        <Image x:Name="ПолоцкоеГетто" Width="25" Height="25" Source="/Ghetto.png" Stretch="Uniform"
+               MouseDown="ПолоцкоеГетто_Click" Cursor="Hand"/>
 
 
         <!-- Поле поиска -->

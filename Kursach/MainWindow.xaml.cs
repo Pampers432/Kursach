@@ -37,9 +37,20 @@ namespace Kursach
             {
                 Хатынь
             };
-            Ghettos = new List<Image>();
-            MassGraves = new List<Image>();
-            Monuments = new List<Image>();
+
+            Ghettos = new List<Image>
+            {
+                ПолоцкоеГетто
+            };
+
+            MassGraves = new List<Image>
+            {
+                БратскаяМогилаПриКаменецке
+            };
+            Monuments = new List<Image>
+            {
+                Мемориал_Хатынь
+            };
         }
 
         // Кнопка очистки
@@ -131,7 +142,19 @@ namespace Kursach
             MessageBox.Show("Картинка кликнута!");
         }
 
-        private void Мемориал_Хатынь_Click(object sender, MouseButtonEventArgs e)
+        private void МемориалХатынь_Click(object sender, MouseButtonEventArgs e)
+        {
+            int id = 1;
+            MessageBox.Show("Картинка кликнута!");
+        }
+
+        private void ПолоцкоеГетто_Click(object sender, MouseButtonEventArgs e)
+        {
+            int id = 1;
+            MessageBox.Show("Картинка кликнута!");
+        }
+
+        private void БратскаяМогилаПриКаменецке_Click(object sender, MouseButtonEventArgs e)
         {
             int id = 1;
             MessageBox.Show("Картинка кликнута!");
