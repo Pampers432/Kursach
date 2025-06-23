@@ -16,7 +16,7 @@
                Width="1026" Height="875" Stretch="UniformToFill" Margin="524,0,0,0"/>
 
         <!-- Кнопки навигации -->
-        <Button Content="Очистить" Margin="23,795,1297,27" FontSize="16" Click="Button_Click"/>
+        <Button Content="Очистить" Margin="23,795,1297,27" FontSize="16" Click="ResetButton_Click"/>
         <Button Content="Жертвы" Margin="273,795,1046,28" FontSize="16"/>
 
         <Image x:Name="Хатынь" Source="/Village.png" Stretch="UniformToFill"

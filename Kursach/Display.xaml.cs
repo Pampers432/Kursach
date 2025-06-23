@@ -19,16 +19,26 @@ namespace Kursach
     /// </summary>
     public partial class Display : Window
     {
+        public bool IsReturningToMain { get; private set; } = false;
+
         public Display()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            Info.Text = "";
-            textBlock.Visibility = Visibility.Collapsed;
-            img.Source = new BitmapImage(new Uri("/Map.png", UriKind.Relative));
-        }        
+            if (!IsReturningToMain)
+            {
+                Application.Current.Shutdown();
+            }
+        }
+
+
+        private void ReturnButton_Click(object sender, RoutedEventArgs e)
+        {
+            IsReturningToMain = true;
+            Close();
+        }
     }
 }

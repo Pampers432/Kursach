@@ -54,7 +54,7 @@ namespace Kursach
         }
 
         // Кнопка очистки
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ResetButton_Click(object sender, RoutedEventArgs e)
         {
             Search.Text = "Поиск";
 
@@ -158,9 +158,20 @@ namespace Kursach
         {
             int id = 1;
             MessageBox.Show("Картинка кликнута!");
+            MoveToDisplay();
         }
 
+        private void MoveToDisplay()
+        {
+            Display display = new Display();
+            //Добавить логику занесения данных из бд на форму
+            display.ShowDialog();
 
+            if (display.IsReturningToMain)
+                Show(); 
+            else
+                Close();
+        }
 
 
 
