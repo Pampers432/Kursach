@@ -4,11 +4,12 @@
         Title="MainWindow"
         WindowStartupLocation="CenterScreen"
         Width="1550" Height="875"
-        WindowStyle="None">
+        WindowStyle="None"
+        Closing="Window_Closing"
+        >
 
     <Grid>
         <Image x:Name="img"
-               Source="/Map.png"
                HorizontalAlignment="Right"
                VerticalAlignment="Top"
                Margin="0,21,771,0" 
@@ -25,18 +26,8 @@
                    Stroke="Black"
                    Fill="Gray"
                    Margin="0,21,18,0"/>
-
-        <Button Content="◀" Width="50" Height="50"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Margin="10,291,0,0"/>
-        <Button Content="▶" Width="50" Height="50"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Margin="784,291,0,0"/>
-        <Button Content="Справка" Margin="871,648,496,191"/>
-        <Button Content="Очистить" Margin="1092,648,275,191" Click="Button_Click"/>
-        <Button Content="Жертвы" Margin="1349,648,18,192"/>
+        <Button Content="Вернуться" Margin="44,648,1323,191" Click="ReturnButton_Click"/>
+        <Button Content="Жертвы" Margin="282,648,1085,192"/>
 
         <TextBlock x:Name="Info" Text="{Binding LongText}" 
            TextWrapping="Wrap" Margin="870,21,18,254" FontSize="16"/>

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.IO;
 using System.Text;
 using System.Windows;
@@ -54,7 +55,7 @@ namespace Kursach
         }
 
         // Кнопка очистки
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ResetButton_Click(object sender, RoutedEventArgs e)
         {
             Search.Text = "Поиск";
 
@@ -140,6 +141,7 @@ namespace Kursach
         {
             int id = 1;
             MessageBox.Show("Картинка кликнута!");
+            MoveToDisplay(id, "Деревня");            
         }
 
         private void МемориалХатынь_Click(object sender, MouseButtonEventArgs e)
@@ -158,66 +160,24 @@ namespace Kursach
         {
             int id = 1;
             MessageBox.Show("Картинка кликнута!");
+            
+        }
+
+        private void MoveToDisplay(int id, string tableName)
+        {
+            Display display = new Display(id, tableName);
+            //Добавить логику занесения данных из бд на форму
+            display.ShowDialog();
+
+            if (display.IsReturningToMain)
+                Show(); 
+            else
+                Close();
         }
 
 
 
-
-
-        //private void Vil1_Click(object sender, RoutedEventArgs e)
-        //{
-        //    int id = 1;
-
-        //    var result = GetVillage(id);
-
-        //    var village = result.Keys.First();
-        //    var location = result.Values.First();
-
-        //    DisplayVillageInfo(village, location);
-        //}
-
-        //private void DisplayVillageInfo(Village village, Location location)
-        //{
-        //    // Устанавливаем текст в `TextBox`
-        //    Info.Text = $@"
-        //        Деревня {village.Name}
-
-        //        Расположенная в {location.Region}, {location.District} (координаты: {location.Latitude}, {location.Longitude}), до трагических событий насчитывала {village.PopulationBefore} жителей. {village.DateDestroyed:dd MMMM yyyy} года поселение было уничтожено в результате {village.Cause.ToLower()}. {(village.MemorialExists ? "На месте трагедии установлен мемориальный комплекс." : "Мемориал на месте событий отсутствует.")}
-        //        ";
-
-        //    // Загружает изображение в `Image` компонент
-        //    if (!string.IsNullOrEmpty(village.ImagePath) && File.Exists(village.ImagePath))
-        //    {
-        //        img.Source = new BitmapImage(new Uri(village.ImagePath, UriKind.Absolute));
-        //        textBlock.Visibility = Visibility.Collapsed;
-        //    }
-        //    else
-        //    {
-        //        img.Source = null;
-        //        textBlock.Text = "Нет изображения";
-        //        textBlock.Visibility = Visibility.Visible;
-        //    }
-        //}
-
-
-
-        //private Dictionary<Village, Location> GetVillage(int villageId)
-        //{
-        //    using (var db = new MyDBContext())
-        //    {
-        //        // Join запрос потому что эффективней
-        //        // С AsNoTracking() EF просто возвращает данные без лишних накладных расходов.
-        //        var result = (from v in db.Villages.AsNoTracking() 
-        //                      join l in db.Locations.AsNoTracking() on v.Location_Id equals l.Id
-        //                      where v.Id == villageId
-        //                      select new { Village = v, Location = l })
-        //                    .FirstOrDefault();
-
-        //        return result != null
-        //            ? new Dictionary<Village, Location> { { result.Village, result.Location } }
-        //            : throw new Exception("Поля с таким Id нет");
-        //    }
-        //}
+        
 
     }
 }
