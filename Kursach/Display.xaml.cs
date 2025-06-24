@@ -31,7 +31,13 @@ namespace Kursach
             this.id = id;
             this.tableName = tableName;
 
-            Vil1_Click(id);
+            if (tableName == "Деревня") Vil1_Click(id);
+            //Добавить логику
+            //Создать методы для обработки данных
+            //Добавить логику
+            //else if (tableName == "Гетто")
+            //else if (tableName == "Могила")
+            //else if (tableName == "Монумент")
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
