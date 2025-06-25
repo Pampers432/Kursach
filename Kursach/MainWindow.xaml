@@ -20,10 +20,10 @@
         <Button Content="Жертвы" Margin="273,795,1046,28" FontSize="16"/>
 
         <Image x:Name="Хатынь" Source="/Village.png" Stretch="UniformToFill"
-               MouseDown="Хатынь_Click" Cursor="Hand" Margin="1223,650,292,190"/>
+               MouseDown="Хатынь_Click" Cursor="Hand" Margin="1020,299,496,541"/>
         
-        <Image x:Name="Мемориал_Хатынь"  Source="/Monument.png" Stretch="UniformToFill"
-               MouseDown="МемориалХатынь_Click" Cursor="Hand" Margin="820,586,695,254"/>
+        <Image x:Name="МемориалХатынь"  Source="/Monument.png" Stretch="UniformToFill"
+               MouseDown="МемориалХатынь_Click" Cursor="Hand" Margin="1037,282,478,559"/>
 
         <Image x:Name="БратскаяМогилаПриКаменецке"  Source="/MassGrave.png" 
                MouseDown="БратскаяМогилаПриКаменецке_Click" Cursor="Hand" Stretch="UniformToFill" Margin="775,481,740,359"/>

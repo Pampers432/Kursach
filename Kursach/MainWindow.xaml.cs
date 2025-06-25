@@ -51,7 +51,7 @@ namespace Kursach
             };
             Monuments = new List<Image>
             {
-                Мемориал_Хатынь
+                МемориалХатынь
             };
 
             AllImgs = Villages
