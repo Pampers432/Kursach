@@ -14,6 +14,7 @@
     <None Remove="MassGrave.png" />
     <None Remove="Monument.png" />
     <None Remove="Village.png" />
+    <None Remove="Хатынь.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,6 +27,7 @@
     <Resource Include="MassGrave.png" />
     <Resource Include="Monument.png" />
     <Resource Include="Village.png" />
+    <Resource Include="Хатынь.png" />
   </ItemGroup>
 
 </Project>
