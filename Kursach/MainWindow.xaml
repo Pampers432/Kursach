@@ -65,7 +65,7 @@
                 Background="LightGray"
                 BorderBrush="Black"
                 Click="Ghetto_Click">
-            <Image x:Name="Ghetto_Img" Source="/Ghetto.png" Stretch="Uniform"/>
+            <Image x:Name="Ghetto_Img" Source="/Images/Ghetto.png" Stretch="Uniform"/>
         </Button>
 
         <!-- Кнопка массового захоронения -->

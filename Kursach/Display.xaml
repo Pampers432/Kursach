@@ -16,7 +16,7 @@
                Width="700" Height="600" Stretch="Fill"/>
         <TextBlock x:Name="textBlock" Text="Нет изображения" FontSize="16" FontWeight="Bold" Margin="0,-250,700,0"
                HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed"/>
-        <Image/>
+        <Image Margin="2500,1118,-2500,-1118"/>
 
 
         <Rectangle HorizontalAlignment="Right" 

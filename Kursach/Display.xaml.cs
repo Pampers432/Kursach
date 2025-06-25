@@ -78,9 +78,12 @@ namespace Kursach
 
 
             // Загружает изображение в `Image` компонент
-            if (!string.IsNullOrEmpty(village.ImagePath) && File.Exists(village.ImagePath))
+            string relativePath = village.ImagePath;
+            string fullPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath.TrimStart('\\'));
+
+            if (!string.IsNullOrEmpty(relativePath) && File.Exists(fullPath))
             {
-                img.Source = new BitmapImage(new Uri(village.ImagePath, UriKind.Absolute));
+                img.Source = new BitmapImage(new Uri(fullPath, UriKind.Absolute));
                 textBlock.Visibility = Visibility.Collapsed;
             }
             else
@@ -89,6 +92,7 @@ namespace Kursach
                 textBlock.Text = "Нет изображения";
                 textBlock.Visibility = Visibility.Visible;
             }
+
         }
 
 
