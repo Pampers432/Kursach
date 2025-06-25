@@ -10,7 +10,7 @@
 
         <!-- Карта -->
         <Image x:Name="img"
-               Source="/Map.png"
+               Source="/Images/Map.png"
                HorizontalAlignment="Left"
                VerticalAlignment="Center" 
                Width="1026" Height="875" Stretch="UniformToFill" Margin="524,0,0,0"/>
@@ -19,16 +19,16 @@
         <Button Content="Очистить" Margin="23,795,1297,27" FontSize="16" Click="ResetButton_Click"/>
         <Button Content="Жертвы" Margin="273,795,1046,28" FontSize="16"/>
 
-        <Image x:Name="Хатынь" Source="/Village.png" Stretch="UniformToFill"
+        <Image x:Name="Хатынь" Source="/Images/Village.png" Stretch="UniformToFill"
                MouseDown="Хатынь_Click" Cursor="Hand" Margin="1020,299,496,541"/>
-        
-        <Image x:Name="МемориалХатынь"  Source="/Monument.png" Stretch="UniformToFill"
+
+        <Image x:Name="МемориалХатынь"  Source="/Images/Monument.png" Stretch="UniformToFill"
                MouseDown="МемориалХатынь_Click" Cursor="Hand" Margin="1037,282,478,559"/>
 
-        <Image x:Name="БратскаяМогилаПриКаменецке"  Source="/MassGrave.png" 
+        <Image x:Name="БратскаяМогилаПриКаменецке"  Source="/Images/MassGrave.png" 
                MouseDown="БратскаяМогилаПриКаменецке_Click" Cursor="Hand" Stretch="UniformToFill" Margin="775,481,740,359"/>
 
-        <Image x:Name="ПолоцкоеГетто" Width="25" Height="25" Source="/Ghetto.png" Stretch="Uniform"
+        <Image x:Name="ПолоцкоеГетто" Width="25" Height="25" Source="/Images/Ghetto.png" Stretch="Uniform"
                MouseDown="ПолоцкоеГетто_Click" Cursor="Hand"/>
 
 
@@ -55,7 +55,7 @@
                 Background="LightGray"
                 BorderBrush="Black"
                 Click="Village_Click">
-            <Image x:Name="Village_Img" Source="/Village.png" Stretch="Uniform"/>
+            <Image x:Name="Village_Img" Source="/Images/Village.png" Stretch="Uniform"/>
         </Button>
 
         <!-- Кнопка гетто -->
@@ -75,7 +75,7 @@
                 Background="LightGray"
                 BorderBrush="Black"
                 Click="MassGrave_Click">
-            <Image x:Name="MassGrave_Img" Source="/MassGrave.png" Stretch="Uniform"/>
+            <Image x:Name="MassGrave_Img" Source="/Images/MassGrave.png" Stretch="Uniform"/>
         </Button>
 
         <!-- Кнопка памятника -->
@@ -85,7 +85,7 @@
                 Background="LightGray"
                 BorderBrush="Black"
                 Click="Monument_Click">
-            <Image x:Name="Monument_Img" Source="/Monument.png" Stretch="Uniform"/>
+            <Image x:Name="Monument_Img" Source="/Images/Monument.png" Stretch="Uniform"/>
         </Button>
 
         <Label Content="Сгоревшие Деревни" FontSize="16" HorizontalAlignment="Left" Margin="87,634,0,0" VerticalAlignment="Top"/>
