@@ -28,7 +28,8 @@ namespace Kursach
         List<Image> Ghettos;
         List<Image> MassGraves;
         List<Image> Monuments;
-
+        List<Image> AllImgs;
+ 
         public MainWindow()
         {
             InitializeComponent();
@@ -52,12 +53,18 @@ namespace Kursach
             {
                 Мемориал_Хатынь
             };
+
+            AllImgs = Villages
+                        .Concat(Ghettos)
+                        .Concat(MassGraves)
+                        .Concat(Monuments)
+                        .ToList();
         }
 
         // Кнопка очистки
         private void ResetButton_Click(object sender, RoutedEventArgs e)
         {
-            Search.Text = "Поиск";
+            SearchField.Text = "Поиск";
 
             Village_Img.Visibility = Visibility.Visible;
             Ghetto_Img.Visibility = Visibility.Visible;
@@ -112,25 +119,36 @@ namespace Kursach
 
         private void SearchIcon_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Клик по значку выполнен!");
-        }
+            string pattern = SearchField.Text; 
+            if (string.IsNullOrEmpty(pattern))
+            {
+                return;
+            }
 
+            foreach (Image img in AllImgs)
+            {
+                if (!img.Name.StartsWith(pattern))
+                {
+                    img.Visibility = Visibility.Collapsed;
+                }
+            }
+        }
 
         private void Search_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (Search.Text == "Поиск")
+            if (SearchField.Text == "Поиск")
             {
-                Search.Text = "";
-                Search.Foreground = Brushes.Black;
+                SearchField.Text = "";
+                SearchField.Foreground = Brushes.Black;
             }
         }
 
         private void Search_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(Search.Text))
+            if (string.IsNullOrWhiteSpace(SearchField.Text))
             {
-                Search.Text = "Поиск";
-                Search.Foreground = Brushes.Gray;
+                SearchField.Text = "Поиск";
+                SearchField.Foreground = Brushes.Gray;
             }
         }
 
@@ -174,10 +192,5 @@ namespace Kursach
             else
                 Close();
         }
-
-
-
-        
-
     }
 }
