@@ -100,7 +100,9 @@ namespace Kursach
             Info.Text = $@"
                 Деревня {village.Name}
 
-                Расположение: {location.Region} область, {location.District} округ (координаты: {location.Latitude}, {location.Longitude}) До уничтожения в деревне проживало {village.PopulationBefore} человек. Причина уничтожения: {village.Cause}
+                Расположение: {location.Region} область, {location.District} округ (координаты: {location.Latitude}, {location.Longitude}) 
+                До уничтожения в деревне проживало {village.PopulationBefore} человек. 
+                Причина уничтожения: {village.Cause}
 
                 Описание: {village.Description} {(village.MemorialExists ? "На месте трагедии установлен мемориальный комплекс." : "Мемориал на месте событий отсутствует.")}
 ";
@@ -192,9 +194,9 @@ namespace Kursach
                 {ghetto.Name}
 
                 Расположение: {location.Region} область, {location.District} округ (координаты: {location.Latitude}, {location.Longitude}).
-
                 Период существования: {ghetto.EstablishedDate} - {ghetto.LiquidationDate}
                 Общее количество узников составляет около: {ghetto.Population} Примерное количество жертв: {ghetto.VictimsCount}
+
                 Описание: {ghetto.Description}
     ";
 
@@ -218,6 +220,31 @@ namespace Kursach
         }
 
 
+        // <summary>
+        // Получение информаци о Братской могиле
+        // <summary>
+        private void DisplayMassGraveInfo(int id)
+        {
+            var result = GetMassGrave(id);
+            var massGrave = result.Keys.First();
+            var location = result.Values.First();
+
+            SetMassGraveInfo(massGrave, location);
+        }
+
+        private void SetMassGraveInfo(MassGrave massGrave, Location location)
+        {
+            Info.Text = $@"
+                Массовое захоронение: {massGrave.Name}
+
+                Расположение: {location.Region} область, {location.District} округ (координаты: {location.Latitude}, {location.Longitude}).
+                Дата создания: {massGrave.InstallationDate} Примерное количество жертв: {massGrave.VictimsCount}
+
+                Описание: {massGrave.Description}
+    ";
+
+            SetImgSource(massGrave.ImagePath);
+        }
 
         private Dictionary<MassGrave, Location> GetMassGrave(int massGraveId)
         {
