@@ -9,8 +9,7 @@
     <Grid>
 
         <!-- Карта -->
-        <Image x:Name="img"
-               Source="/Images/Map.png"
+        <Image x:Name="img" Source="/Map.png"
                HorizontalAlignment="Left"
                VerticalAlignment="Center" 
                Width="1026" Height="875" Stretch="UniformToFill" Margin="524,0,0,0"/>
