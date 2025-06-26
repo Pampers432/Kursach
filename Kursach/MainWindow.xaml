@@ -22,7 +22,7 @@
                MouseDown="Хатынь_Click" Cursor="Hand" Margin="1020,299,496,541"/>
 
         <Image x:Name="Мемориал_Хатынь"  Source="/Images/Monument.png" Stretch="UniformToFill"
-               MouseDown="МемориалХатынь_Click" Cursor="Hand" Margin="1037,282,478,559"/>
+               MouseDown="МемориалХатынь_Click" Cursor="Hand" Margin="1060,265,455,576"/>
 
         <Image x:Name="Братская_Могила_При_Каменецке"  Source="/Images/MassGrave.png" 
                MouseDown="БратскаяМогилаПриКаменецке_Click" Cursor="Hand" Stretch="UniformToFill" Margin="775,481,740,359"/>

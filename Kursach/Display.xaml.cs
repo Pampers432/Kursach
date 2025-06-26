@@ -49,13 +49,15 @@ namespace Kursach
             Info.Text = "";
             textBlock.Visibility = Visibility.Collapsed;
 
+
+            if (tableName == "Монумент") DisplayMonumentInfo(id);
             if (tableName == "Деревня") DisplayVillageInfo(id);
             //Добавить логику
             //Создать методы для обработки данных
             //Добавить логику
             //else if (tableName == "Гетто")
             //else if (tableName == "Могила")
-            //else if (tableName == "Монумент")
+            //
         }
 
         private void SetImgSource(string Path)
@@ -103,22 +105,7 @@ namespace Kursach
             // Загружает изображение в `Image` компонент
             string relativePath = village.ImagePath;
             SetImgSource(relativePath);
-            //string fullPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath.TrimStart('\\'));
-
-            //if (!string.IsNullOrEmpty(relativePath) && File.Exists(fullPath))
-            //{
-            //    img.Source = new BitmapImage(new Uri(fullPath, UriKind.Absolute));
-            //    textBlock.Visibility = Visibility.Collapsed;
-            //}
-            //else
-            //{
-            //    img.Source = null;
-            //    textBlock.Text = "Нет изображения";
-            //    textBlock.Visibility = Visibility.Visible;
-            //}
         }
-
-        
 
         private Dictionary<Village, Location> GetVillageFromDb(int villageId)
         {
@@ -139,9 +126,36 @@ namespace Kursach
         }
 
         // <summary>
-        // 
+        // Получение информаци о монументе
         // <summary>
-        private Dictionary<Monument, Location> GetMonument(int monumentId)
+        private void DisplayMonumentInfo(int id)
+        {
+            var result = GetMonumentFromDb(id);
+
+            var monument = result.Keys.First();
+            var location = result.Values.First();
+
+            SetMonumentInfo(monument, location);
+        }
+
+        private void SetMonumentInfo(Monument monument, Location location)
+        {
+            // Устанавливает текст в `TextBox`
+            Info.Text = $@"
+                Монумент {monument.Name}
+
+                Расположение: {location.Region} область, {location.District} округ (координаты: {location.Latitude}, {location.Longitude}).
+
+                Описание: {monument.Description}
+";
+
+
+            // Загружает изображение в `Image` компонент
+            string relativePath = monument.ImagePath;
+            SetImgSource(relativePath);
+        }
+
+        private Dictionary<Monument, Location> GetMonumentFromDb(int monumentId)
         {
             using (var db = new MyDBContext())
             {
