@@ -25,21 +25,6 @@ namespace Kursach
         int id;
         string tableName;
 
-        public Display(int id, string tableName)
-        {
-            InitializeComponent();
-            this.id = id;
-            this.tableName = tableName;
-
-            if (tableName == "Деревня") Vil1_Click(id);
-            //Добавить логику
-            //Создать методы для обработки данных
-            //Добавить логику
-            //else if (tableName == "Гетто")
-            //else if (tableName == "Могила")
-            //else if (tableName == "Монумент")
-        }
-
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             if (!IsReturningToMain)
@@ -48,24 +33,45 @@ namespace Kursach
             }
         }
 
-
         private void ReturnButton_Click(object sender, RoutedEventArgs e)
         {
             IsReturningToMain = true;
             Close();
         }
 
-        private void Vil1_Click(int id)
+        public Display(int id, string tableName)
         {
-            var result = GetVillage(id);
+            InitializeComponent();
+            this.id = id;
+            this.tableName = tableName;
+
+            img.Source = null;
+            Info.Text = "";
+            textBlock.Visibility = Visibility.Collapsed;
+
+            if (tableName == "Деревня") DisplayVillageInfo(id);
+            //Добавить логику
+            //Создать методы для обработки данных
+            //Добавить логику
+            //else if (tableName == "Гетто")
+            //else if (tableName == "Могила")
+            //else if (tableName == "Монумент")
+        }
+
+        // <summary>
+        // Получение информаци о деревне
+        // <summary>
+        private void DisplayVillageInfo(int id)
+        {
+            var result = GetVillageFromDb(id);
 
             var village = result.Keys.First();
             var location = result.Values.First();
 
-            DisplayVillageInfo(village, location);
+            GetVillageInfo(village, location);
         }
 
-        private void DisplayVillageInfo(Village village, Location location)
+        private void GetVillageInfo(Village village, Location location)
         {
             // Устанавливает текст в `TextBox`
             Info.Text = $@"
@@ -92,12 +98,9 @@ namespace Kursach
                 textBlock.Text = "Нет изображения";
                 textBlock.Visibility = Visibility.Visible;
             }
-
         }
 
-
-
-        private Dictionary<Village, Location> GetVillage(int villageId)
+        private Dictionary<Village, Location> GetVillageFromDb(int villageId)
         {
             using (var db = new MyDBContext())
             {
@@ -115,6 +118,9 @@ namespace Kursach
             }
         }
 
+        // <summary>
+        // 
+        // <summary>
         private Dictionary<Monument, Location> GetMonument(int monumentId)
         {
             using (var db = new MyDBContext())
