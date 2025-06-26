@@ -164,6 +164,7 @@ namespace Kursach
         private void МемориалХатынь_Click(object sender, MouseButtonEventArgs e)
         {
             int id = 1;
+            MoveToDisplay(id, "Монумент");
         }
 
         private void ПолоцкоеГетто_Click(object sender, MouseButtonEventArgs e)
@@ -183,9 +184,7 @@ namespace Kursach
             display.ShowDialog();
 
             if (display.IsReturningToMain)
-                Show(); 
-            else
-                Close();
+                Show();
         }
     }
 }
