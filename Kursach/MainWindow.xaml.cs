@@ -42,16 +42,16 @@ namespace Kursach
 
             Ghettos = new List<Image>
             {
-                ПолоцкоеГетто
+                Полоцкое_Гетто
             };
 
             MassGraves = new List<Image>
             {
-                БратскаяМогилаПриКаменецке
+                Братская_Могила_При_Каменецке
             };
             Monuments = new List<Image>
             {
-                МемориалХатынь
+                Мемориал_Хатынь
             };
 
             AllImgs = Villages
