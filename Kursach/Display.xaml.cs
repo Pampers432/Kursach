@@ -58,6 +58,23 @@ namespace Kursach
             //else if (tableName == "Монумент")
         }
 
+        private void SetImgSource(string Path)
+        {
+            string fullPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Path.TrimStart('\\'));
+
+            if (!string.IsNullOrEmpty(Path) && File.Exists(fullPath))
+            {
+                img.Source = new BitmapImage(new Uri(fullPath, UriKind.Absolute));
+                textBlock.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                img.Source = null;
+                textBlock.Text = "Нет изображения";
+                textBlock.Visibility = Visibility.Visible;
+            }
+        }
+
         // <summary>
         // Получение информаци о деревне
         // <summary>
@@ -85,20 +102,23 @@ namespace Kursach
 
             // Загружает изображение в `Image` компонент
             string relativePath = village.ImagePath;
-            string fullPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath.TrimStart('\\'));
+            SetImgSource(relativePath);
+            //string fullPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath.TrimStart('\\'));
 
-            if (!string.IsNullOrEmpty(relativePath) && File.Exists(fullPath))
-            {
-                img.Source = new BitmapImage(new Uri(fullPath, UriKind.Absolute));
-                textBlock.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                img.Source = null;
-                textBlock.Text = "Нет изображения";
-                textBlock.Visibility = Visibility.Visible;
-            }
+            //if (!string.IsNullOrEmpty(relativePath) && File.Exists(fullPath))
+            //{
+            //    img.Source = new BitmapImage(new Uri(fullPath, UriKind.Absolute));
+            //    textBlock.Visibility = Visibility.Collapsed;
+            //}
+            //else
+            //{
+            //    img.Source = null;
+            //    textBlock.Text = "Нет изображения";
+            //    textBlock.Visibility = Visibility.Visible;
+            //}
         }
+
+        
 
         private Dictionary<Village, Location> GetVillageFromDb(int villageId)
         {
