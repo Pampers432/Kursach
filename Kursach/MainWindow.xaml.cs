@@ -170,12 +170,13 @@ namespace Kursach
         private void ПолоцкоеГетто_Click(object sender, MouseButtonEventArgs e)
         {
             int id = 1;
+            MoveToDisplay(id, "Гетто");
         }
 
         private void БратскаяМогилаПриКаменецке_Click(object sender, MouseButtonEventArgs e)
         {
             int id = 1;
-            
+            MoveToDisplay(id, "Могила");
         }
 
         private void MoveToDisplay(int id, string tableName)

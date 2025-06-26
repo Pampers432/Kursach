@@ -51,13 +51,9 @@ namespace Kursach
 
 
             if (tableName == "Монумент") DisplayMonumentInfo(id);
-            if (tableName == "Деревня") DisplayVillageInfo(id);
-            //Добавить логику
-            //Создать методы для обработки данных
-            //Добавить логику
-            //else if (tableName == "Гетто")
-            //else if (tableName == "Могила")
-            //
+            else if (tableName == "Деревня") DisplayVillageInfo(id);
+            else if (tableName == "Гетто") DisplayGhettoInfo(id);
+            else if (tableName == "Могила") DisplayMassGraveInfo(id);
         }
 
         private void SetImgSource(string Path)
@@ -150,7 +146,7 @@ namespace Kursach
         {
             // Устанавливает текст в `TextBox`
             Info.Text = $@"
-                Монумент {monument.Name}
+                {monument.Name}
 
                 Расположение: {location.Region} область, {location.District} округ (координаты: {location.Latitude}, {location.Longitude}).
 
@@ -159,8 +155,7 @@ namespace Kursach
 
 
             // Загружает изображение в `Image` компонент
-            string relativePath = monument.ImagePath;
-            SetImgSource(relativePath);
+            SetImgSource(monument.ImagePath);
         }
 
         private Dictionary<Monument, Location> GetMonumentFromDb(int monumentId)
@@ -179,7 +174,33 @@ namespace Kursach
             }
         }
 
-        private Dictionary<Ghetto, Location> GetGhetto(int ghettoId)
+        // <summary>
+        // Получение информаци о Монументе
+        // <summary>
+        private void DisplayGhettoInfo(int id)
+        {
+            var result = GetGhettoFromDb(id);
+            var ghetto = result.Keys.First();
+            var location = result.Values.First();
+
+            SetGhettoInfo(ghetto, location);
+        }
+        
+        private void SetGhettoInfo(Ghetto ghetto, Location location)
+        {
+            Info.Text = $@"
+                {ghetto.Name}
+
+                Расположение: {location.Region} область, {location.District} округ (координаты: {location.Latitude}, {location.Longitude}).
+
+                Период существования: {ghetto.EstablishedDate} - {ghetto.LiquidationDate}
+                Общее количество узников составляет около: {ghetto.Population} Примерное количество жертв: {ghetto.VictimsCount}
+                Описание: {ghetto.Description}
+    ";
+
+            SetImgSource(ghetto.ImagePath);
+        }
+        private Dictionary<Ghetto, Location> GetGhettoFromDb(int ghettoId)
         {
             using (var db = new MyDBContext())
             {
@@ -187,13 +208,16 @@ namespace Kursach
                               join l in db.Locations.AsNoTracking() on g.Location_Id equals l.Id
                               where g.Id == ghettoId
                               select new { Ghetto = g, Location = l })
-                             .FirstOrDefault();
+                           .FirstOrDefault();
 
-                return result != null
-                    ? new Dictionary<Ghetto, Location> { { result.Ghetto, result.Location } }
-                    : throw new Exception("Гетто с таким Id не найдено");
+                if (result == null)
+                    throw new Exception("Гетто с таким Id не найдено");
+
+                return new Dictionary<Ghetto, Location> { { result.Ghetto, result.Location } };
             }
         }
+
+
 
         private Dictionary<MassGrave, Location> GetMassGrave(int massGraveId)
         {
