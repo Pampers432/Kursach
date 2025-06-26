@@ -127,7 +127,7 @@ namespace Kursach
 
             foreach (Image img in AllImgs)
             {
-                if (!img.Name.StartsWith(pattern))
+                if (!img.Name.StartsWith(pattern) && !img.Name.ToLower().StartsWith(pattern.ToLower()))
                 {
                     img.Visibility = Visibility.Collapsed;
                 }
@@ -184,7 +184,6 @@ namespace Kursach
         private void MoveToDisplay(int id, string tableName)
         {
             Display display = new Display(id, tableName);
-            //Добавить логику занесения данных из бд на форму
             display.ShowDialog();
 
             if (display.IsReturningToMain)
