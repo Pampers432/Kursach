@@ -184,9 +184,7 @@ namespace Kursach
             display.ShowDialog();
 
             if (display.IsReturningToMain)
-                Show(); 
-            else
-                Close();
+                Show();
         }
     }
 }

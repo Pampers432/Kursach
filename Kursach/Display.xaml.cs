@@ -62,9 +62,17 @@ namespace Kursach
 
         private void SetImgSource(string Path)
         {
-            string fullPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Path.TrimStart('\\'));
+            if (string.IsNullOrEmpty(Path))
+            {
+                img.Source = null;
+                textBlock.Text = "Нет изображения";
+                textBlock.Visibility = Visibility.Visible;
+                return;
+            }
 
-            if (!string.IsNullOrEmpty(Path) && File.Exists(fullPath))
+            string fullPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Path.TrimStart('\\', '/'));
+
+            if (File.Exists(fullPath))
             {
                 img.Source = new BitmapImage(new Uri(fullPath, UriKind.Absolute));
                 textBlock.Visibility = Visibility.Collapsed;
@@ -72,7 +80,7 @@ namespace Kursach
             else
             {
                 img.Source = null;
-                textBlock.Text = "Нет изображения";
+                textBlock.Text = "Изображение не найдено";
                 textBlock.Visibility = Visibility.Visible;
             }
         }
