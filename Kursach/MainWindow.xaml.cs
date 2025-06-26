@@ -158,26 +158,22 @@ namespace Kursach
         private void Хатынь_Click(object sender, MouseButtonEventArgs e)
         {
             int id = 1;
-            MessageBox.Show("Картинка кликнута!");
             MoveToDisplay(id, "Деревня");            
         }
 
         private void МемориалХатынь_Click(object sender, MouseButtonEventArgs e)
         {
             int id = 1;
-            MessageBox.Show("Картинка кликнута!");
         }
 
         private void ПолоцкоеГетто_Click(object sender, MouseButtonEventArgs e)
         {
             int id = 1;
-            MessageBox.Show("Картинка кликнута!");
         }
 
         private void БратскаяМогилаПриКаменецке_Click(object sender, MouseButtonEventArgs e)
         {
             int id = 1;
-            MessageBox.Show("Картинка кликнута!");
             
         }
 
