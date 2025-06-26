@@ -67,17 +67,23 @@ namespace Kursach
 
         private void DisplayVillageInfo(Village village, Location location)
         {
-            // Устанавливаем текст в `TextBox`
+            // Устанавливает текст в `TextBox`
             Info.Text = $@"
                 Деревня {village.Name}
 
-                Расположенная в {location.Region}, {location.District} (координаты: {location.Latitude}, {location.Longitude}), до трагических событий насчитывала {village.PopulationBefore} жителей. {village.DateDestroyed:dd MMMM yyyy} года поселение было уничтожено в результате {village.Cause.ToLower()}. {(village.MemorialExists ? "На месте трагедии установлен мемориальный комплекс." : "Мемориал на месте событий отсутствует.")}
-                ";
+                Расположение: {location.Region} область, {location.District} округ (координаты: {location.Latitude}, {location.Longitude}) До уничтожения в деревне проживало {village.PopulationBefore} человек. Причина уничтожения: {village.Cause}
+
+                Описание: {village.Description} {(village.MemorialExists ? "На месте трагедии установлен мемориальный комплекс." : "Мемориал на месте событий отсутствует.")}
+";
+
 
             // Загружает изображение в `Image` компонент
-            if (!string.IsNullOrEmpty(village.ImagePath) && File.Exists(village.ImagePath))
+            string relativePath = village.ImagePath;
+            string fullPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath.TrimStart('\\'));
+
+            if (!string.IsNullOrEmpty(relativePath) && File.Exists(fullPath))
             {
-                img.Source = new BitmapImage(new Uri(village.ImagePath, UriKind.Absolute));
+                img.Source = new BitmapImage(new Uri(fullPath, UriKind.Absolute));
                 textBlock.Visibility = Visibility.Collapsed;
             }
             else
@@ -86,6 +92,7 @@ namespace Kursach
                 textBlock.Text = "Нет изображения";
                 textBlock.Visibility = Visibility.Visible;
             }
+
         }
 
 

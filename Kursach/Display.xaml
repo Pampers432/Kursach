@@ -16,7 +16,7 @@
                Width="700" Height="600" Stretch="Fill"/>
         <TextBlock x:Name="textBlock" Text="Нет изображения" FontSize="16" FontWeight="Bold" Margin="0,-250,700,0"
                HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed"/>
-        <Image/>
+        <Image Margin="2500,1118,-2500,-1118"/>
 
 
         <Rectangle HorizontalAlignment="Right" 
@@ -26,12 +26,12 @@
                    Stroke="Black"
                    Fill="Gray"
                    Margin="0,21,18,0"/>
-        <Button Content="Вернуться" Margin="44,648,1323,191" Click="ReturnButton_Click"/>
-        <Button Content="Жертвы" Margin="282,648,1085,192"/>
+        <Button Content="Вернуться" Margin="44,648,1323,174" Click="ReturnButton_Click"/>
+        <Button Content="Жертвы" Margin="282,648,1085,176"/>
 
         <TextBlock x:Name="Info" Text="{Binding LongText}" 
            TextWrapping="Wrap" Margin="870,21,18,254" FontSize="16"/>
 
-        
+
     </Grid>
 </Window>
