@@ -42,6 +42,8 @@ namespace Kursach
         public Display(int id, string tableName)
         {
             InitializeComponent();
+            bg.Source = new BitmapImage(new Uri("Images/bg.png", UriKind.Relative));
+
             this.id = id;
             this.tableName = tableName;
 
