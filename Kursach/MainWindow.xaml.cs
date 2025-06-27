@@ -105,6 +105,8 @@ namespace Kursach
             ChangeVisibility(group, visibilityFlag);
         }
 
+
+        // Фильтры
         private void Village_Click(object sender, RoutedEventArgs e) =>
             ToggleVisibility(Village_Img, Villages, ref VillageVisibility);
 
@@ -117,6 +119,8 @@ namespace Kursach
         private void Monument_Click(object sender, RoutedEventArgs e) =>
             ToggleVisibility(Monument_Img, Monuments, ref MonumentVisibility);
 
+
+        // Поиск
         private void SearchIcon_Click(object sender, RoutedEventArgs e)
         {
             string pattern = SearchField.Text; 
@@ -155,29 +159,49 @@ namespace Kursach
         /// <summary>
         /// Функционал
         /// </summary>
+    
+        // Деревни
         private void Хатынь_Click(object sender, MouseButtonEventArgs e)
         {
             int id = 1;
             MoveToDisplay(id, "Деревня");            
         }
 
+        private void Багута_Click(object sender, MouseButtonEventArgs e)
+        {
+            int id = 2;
+            MoveToDisplay(id, "Деревня");
+        }
+
+        // Мемориалы
         private void МемориалХатынь_Click(object sender, MouseButtonEventArgs e)
         {
             int id = 1;
             MoveToDisplay(id, "Монумент");
         }
 
+        // Гетто
         private void ПолоцкоеГетто_Click(object sender, MouseButtonEventArgs e)
         {
             int id = 1;
             MoveToDisplay(id, "Гетто");
         }
 
+        // Брасткие могилы
         private void БратскаяМогилаПриКаменецке_Click(object sender, MouseButtonEventArgs e)
         {
             int id = 1;
             MoveToDisplay(id, "Могила");
         }
+
+        private void БратскаяМогилаБагута_Click(object sender, MouseButtonEventArgs e)
+        {
+            int id = 2;
+            MoveToDisplay(id, "Могила");
+        }
+
+
+
 
         private void MoveToDisplay(int id, string tableName)
         {

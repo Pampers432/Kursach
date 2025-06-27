@@ -18,18 +18,40 @@
         <Button Content="Очистить" Margin="23,795,1297,27" FontSize="16" Click="ResetButton_Click"/>
         <Button Content="Жертвы" Margin="273,795,1046,28" FontSize="16"/>
 
-        <Image x:Name="Хатынь" Width="25" Height="25" Source="/Images/Village.png" Stretch="UniformToFill"
-               MouseDown="Хатынь_Click" Cursor="Hand" Margin="1020,299,496,541"/>
+        <!-- Деревни -->
+        <!-- Деревни -->
+        <Image x:Name="Хатынь" Width="25" Height="25" Source="/Images/Village.png"
+           MouseDown="Хатынь_Click" Cursor="Hand" Stretch="Uniform"
+           HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1020,299,0,0"/>
 
-        <Image x:Name="Мемориал_Хатынь" Width="25" Height="25"  Source="/Images/Monument.png" Stretch="UniformToFill"
-               MouseDown="МемориалХатынь_Click" Cursor="Hand" Margin="1041,288,484,562"/>
+        <Image x:Name="Багута" Width="26" Height="24" Source="/Images/Village.png"
+       MouseDown="Багута_Click" Cursor="Hand" Stretch="Uniform"
+       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1024,370,0,0" />
 
-        <Image x:Name="Братская_Могила_При_Каменецке" Width="25" Height="25"  Source="/Images/MassGrave.png" 
-               MouseDown="БратскаяМогилаПриКаменецке_Click" Cursor="Hand" Stretch="UniformToFill" Margin="1109,97,406,743"/>
+        <!-- Мемориалы -->
+        <!-- Мемориалы -->
+        <Image x:Name="Мемориал_Хатынь" Width="25" Height="25" Source="/Images/Monument.png"
+           MouseDown="МемориалХатынь_Click" Cursor="Hand" Stretch="Uniform"
+           HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1041,288,0,0"/>
 
-        <Image x:Name="Полоцкое_Гетто" Width="25" Height="25" Source="/Images/Ghetto.png" Stretch="Uniform"
-               MouseDown="ПолоцкоеГетто_Click" Cursor="Hand" Margin="585,680,940,170"/>
 
+
+        <!-- Братские могилы -->
+        <!-- Братские могилы -->
+        <Image x:Name="Братская_Могила_При_Каменецке" Width="25" Height="25" Source="/Images/MassGrave.png"
+           MouseDown="БратскаяМогилаПриКаменецке_Click" Cursor="Hand" Stretch="Uniform"
+           HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1109,97,0,0"/>
+
+        <Image x:Name="Братская_Могила_Багута" Width="25" Height="25" Source="/Images/MassGrave.png"
+       MouseDown="БратскаяМогилаБагута_Click" Cursor="Hand" Stretch="Uniform"
+       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1041,357,0,0" />
+
+
+        <!-- Еврейские гетто -->
+        <!-- Еврейские гетто -->
+        <Image x:Name="Полоцкое_Гетто" Width="25" Height="25" Source="/Images/Ghetto.png"
+           MouseDown="ПолоцкоеГетто_Click" Cursor="Hand" Stretch="Uniform"
+           HorizontalAlignment="Left" VerticalAlignment="Top" Margin="585,680,0,0"/>
 
         <!-- Поле поиска -->
         <Rectangle HorizontalAlignment="Left" Height="50" Margin="23,10,0,0" Fill="LightGray"
