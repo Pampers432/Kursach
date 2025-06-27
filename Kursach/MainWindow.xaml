@@ -54,15 +54,15 @@
            HorizontalAlignment="Left" VerticalAlignment="Top" Margin="585,680,0,0"/>
 
         <!-- Поле поиска -->
-        <Rectangle HorizontalAlignment="Left" Height="50" Margin="23,10,0,0" Fill="#ECB47F"
+        <Rectangle HorizontalAlignment="Left" Height="50" Margin="23,14,0,0" Fill="#ECB47F"
                    Stroke="Transparent" VerticalAlignment="Top" Width="481"/>
         <TextBox x:Name="SearchField"
          Text="Поиск" FontSize="16" VerticalContentAlignment="Center" Background="Transparent"
-         Margin="23,10,1081,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="446" Height="50"
+         Margin="23,14,1081,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="446" Height="50"
          GotFocus="Search_GotFocus" LostFocus="Search_LostFocus" BorderBrush="Transparent"/>
 
         <Button Click="SearchIcon_Click"
-        HorizontalAlignment="Left" Height="50" Width="35" Margin="469,10,0,815"
+        HorizontalAlignment="Left" Height="50" Width="35" Margin="469,14,0,811"
         Background="Transparent" BorderThickness="0" Cursor="Hand">
             <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="20" Text="" />
         </Button>
@@ -75,6 +75,7 @@
                 VerticalAlignment="Top"
                 Background="#B6E7F1"
                 BorderBrush="Black"
+                Cursor="Hand"
                 Click="Village_Click">
             <Image x:Name="Village_Img" Source="/Images/Village.png" Stretch="Uniform"/>
         </Button>
@@ -85,6 +86,7 @@
                 VerticalAlignment="Top"
                 Background="#B6E7F1"
                 BorderBrush="Black"
+                Cursor="Hand"
                 Click="Ghetto_Click">
             <Image x:Name="Ghetto_Img" Source="/Images/Ghetto.png" Stretch="Uniform"/>
         </Button>
@@ -95,6 +97,7 @@
                 VerticalAlignment="Top"
                 BorderBrush="Black"
                 Background="#B6E7F1"
+                Cursor="Hand"
                 Click="MassGrave_Click">
             <Image x:Name="MassGrave_Img" Source="/Images/MassGrave.png" Stretch="Uniform"/>
         </Button>
@@ -105,16 +108,33 @@
                 VerticalAlignment="Top"
                 Background="#B6E7F1"
                 BorderBrush="Black"
+                Cursor="Hand"
                 Click="Monument_Click">
             <Image x:Name="Monument_Img" Source="/Images/Monument.png" Stretch="Uniform"/>
         </Button>
 
-        <Label Content="Сгоревшие Деревни" FontSize="16" HorizontalAlignment="Left" Margin="87,634,0,0" VerticalAlignment="Top"/>
-        <Label Content="Еврейские Гетто" FontSize="16" HorizontalAlignment="Left" Margin="87,708,0,0" VerticalAlignment="Top"/>
-        <Label Content="Братские Могилы" FontSize="16" HorizontalAlignment="Left" Margin="340,634,0,0" VerticalAlignment="Top"/>
-        <Label Content="Монументы" FontSize="16" HorizontalAlignment="Left" Margin="340,708,0,0" VerticalAlignment="Top"/>
-        <Label Content="" FontSize="16" HorizontalAlignment="Left" Margin="8,312,0,0" VerticalAlignment="Top"/>
+        <Label Content="Сгоревшие Деревни" FontSize="16" HorizontalAlignment="Left" Margin="73,622,0,0" VerticalContentAlignment="Center"
+               MouseDown="Village_Click" Cursor="Hand" VerticalAlignment="Top" Width="175" Height="50"/>
+        <Label Content="Еврейские Гетто" FontSize="16" HorizontalAlignment="Left" Margin="73,699,0,0" VerticalContentAlignment="Center"
+               MouseDown="Ghetto_Click" Cursor="Hand" VerticalAlignment="Top" Width="175" Height="50"/>
+        <Label Content="Братские Могилы" FontSize="16" HorizontalAlignment="Left" Margin="323,622,0,0" VerticalContentAlignment="Center"
+               MouseDown="MassGrave_Click" Cursor="Hand" VerticalAlignment="Top" Width="175" Height="50"/>
+        <Label Content="Монументы" FontSize="16" HorizontalAlignment="Left" Margin="323,699,0,0" VerticalContentAlignment="Center"
+               MouseDown="Monument_Click" Cursor="Hand" VerticalAlignment="Top" Width="175" Height="50"/>
 
+
+        <Image HorizontalAlignment="Left" Height="302" Margin="23,0,0,0" VerticalAlignment="Center" Width="481" Source="/Main.jpg"/>
+
+
+        <Rectangle HorizontalAlignment="Left" 
+                   VerticalAlignment="Top" 
+                   Width="481" 
+                   Height="136" 
+                   Stroke="Black"
+                   Fill="LightGray" Margin="23,110,0,0"/>
+
+        <TextBlock x:Name="Info"
+           TextWrapping="Wrap" Margin="29,120,1046,639" FontSize="20" Text="Программа представляет собой базу данных о населенных пунктах, уничтоженных во время Второй мировой войны, а также связанных с ними мемориалах, гетто, братских могилах и жертвах."/>
 
     </Grid>
 </Window>

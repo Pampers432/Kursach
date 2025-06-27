@@ -102,10 +102,12 @@ namespace Kursach
 
         private void ToggleVisibility(Image icon, List<Image> group, ref bool visibilityFlag)
         {
-            icon.Visibility = icon.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            visibilityFlag = icon.Visibility == Visibility.Visible;
+            visibilityFlag = !visibilityFlag;
+            icon.Opacity = visibilityFlag ? 1.0 : 0.5;
+
             ChangeVisibility(group, visibilityFlag);
         }
+
 
 
         // Фильтры

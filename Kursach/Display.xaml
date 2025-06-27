@@ -26,11 +26,11 @@
                    Stroke="Black"
                    Fill="LightGray"
                    Margin="0,58,11,0"/>
-        <Button Content="Вернуться" Margin="56,769,1311,53" Click="ReturnButton_Click" Background="#88CFAC"/>
-        <Button Content="Жертвы" Margin="294,769,1073,55" Background="#88CFAC"/>
+        <Button Content="Вернуться" Margin="26,756,1306,66" Click="ReturnButton_Click" FontSize="16" Background="#88CFAC"/>
+        <Button Content="Жертвы" Margin="309,756,1023,68" FontSize="16" Background="#88CFAC"/>
 
         <TextBlock x:Name="Info" Text="{Binding LongText}" 
-           TextWrapping="Wrap" Margin="812,58,11,158" FontSize="16"/>
+           TextWrapping="Wrap" Margin="812,58,11,158" FontSize="20"/>
 
 
     </Grid>
