@@ -1,18 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Kursach
 {
@@ -42,7 +31,7 @@ namespace Kursach
         public Display(int id, string tableName)
         {
             InitializeComponent();
-            bg.Source = new BitmapImage(new Uri("Images/bg.png", UriKind.Relative));
+            
 
             this.id = id;
             this.tableName = tableName;
@@ -99,8 +88,7 @@ namespace Kursach
         private void GetVillageInfo(Village village, Location location)
         {
             // Устанавливает текст в `TextBox`
-            Info.Text = $@"
-                Деревня {village.Name}
+            Info.Text = $@"                            Деревня {village.Name}
 
                 Расположение: {location.Region} область, {location.District} округ (координаты: {location.Latitude}, {location.Longitude}) 
                 До уничтожения в деревне проживало {village.PopulationBefore} человек. 
@@ -149,8 +137,7 @@ namespace Kursach
         private void SetMonumentInfo(Monument monument, Location location)
         {
             // Устанавливает текст в `TextBox`
-            Info.Text = $@"
-                {monument.Name}
+            Info.Text = $@"                            {monument.Name}
 
                 Расположение: {location.Region} область, {location.District} округ (координаты: {location.Latitude}, {location.Longitude}).
 
@@ -192,8 +179,7 @@ namespace Kursach
         
         private void SetGhettoInfo(Ghetto ghetto, Location location)
         {
-            Info.Text = $@"
-                {ghetto.Name}
+            Info.Text = $@"                            {ghetto.Name}
 
                 Расположение: {location.Region} область, {location.District} округ (координаты: {location.Latitude}, {location.Longitude}).
                 Период существования: {ghetto.EstablishedDate} - {ghetto.LiquidationDate}
@@ -236,8 +222,7 @@ namespace Kursach
 
         private void SetMassGraveInfo(MassGrave massGrave, Location location)
         {
-            Info.Text = $@"
-                Массовое захоронение: {massGrave.Name}
+            Info.Text = $@"                            {massGrave.Name}
 
                 Расположение: {location.Region} область, {location.District} округ (координаты: {location.Latitude}, {location.Longitude}).
                 Дата создания: {massGrave.InstallationDate} Примерное количество жертв: {massGrave.VictimsCount}

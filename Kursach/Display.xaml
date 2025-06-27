@@ -9,37 +9,30 @@
         >
 
     <Grid>
-        <Image x:Name="bg" Source="/Images/bg.png"
-       Stretch="Fill"
-       HorizontalAlignment="Stretch"
-       VerticalAlignment="Stretch"
-       Panel.ZIndex="0"/>
-
+        <Image x:Name="bg"
+       Stretch="Fill" Source="/bg.png"/>
 
         <Image x:Name="img"
                HorizontalAlignment="Right"
                VerticalAlignment="Top"
-               Margin="0,58,758,0" 
-               Width="769" Height="659" Stretch="Fill"/>
+               Margin="0,79,797,0" 
+               Width="700" Height="600" Stretch="Fill"/>
         <TextBlock x:Name="textBlock" Text="Нет изображения" FontSize="16" FontWeight="Bold" Margin="0,-250,700,0"
                HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed"/>
         <Image Margin="2500,1118,-2500,-1118"/>
 
-
         <Rectangle HorizontalAlignment="Right" 
                    VerticalAlignment="Top" 
-                   Width="727" 
-                   Height="659" 
+                   Width="700" 
+                   Height="600" 
                    Stroke="Black"
                    
-                   Fill="LightGray"
-                   Margin="0,58,11,0"/>
-        <Button Content="Вернуться" Margin="26,756,1306,66" Click="ReturnButton_Click" FontSize="16" Background="#88CFAC"/>
-        <Button Content="Жертвы" Margin="309,756,1023,68" FontSize="16" Background="#88CFAC"/>
-
+                   Fill="Transparent"
+                   Margin="0,79,49,0"/>
         <TextBlock x:Name="Info" Text="{Binding LongText}"
-           TextWrapping="Wrap" Margin="812,58,11,158" FontSize="20"/>
+           TextWrapping="Wrap" Margin="801,79,49,196" FontSize="20"/>
 
-
+        <Button Content="Вернуться" Margin="39,749,1293,73" Click="ReturnButton_Click" FontSize="16" Background="#88CFAC"/>
+        <Button Content="Жертвы" Margin="322,749,1010,75" FontSize="16" Background="#88CFAC"/>
     </Grid>
 </Window>
