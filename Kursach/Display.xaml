@@ -9,6 +9,13 @@
         >
 
     <Grid>
+        <Image x:Name="bg" Source="/Images/bg.png"
+       Stretch="Fill"
+       HorizontalAlignment="Stretch"
+       VerticalAlignment="Stretch"
+       Panel.ZIndex="0"/>
+
+
         <Image x:Name="img"
                HorizontalAlignment="Right"
                VerticalAlignment="Top"
@@ -24,12 +31,13 @@
                    Width="727" 
                    Height="659" 
                    Stroke="Black"
+                   
                    Fill="LightGray"
                    Margin="0,58,11,0"/>
         <Button Content="Вернуться" Margin="26,756,1306,66" Click="ReturnButton_Click" FontSize="16" Background="#88CFAC"/>
         <Button Content="Жертвы" Margin="309,756,1023,68" FontSize="16" Background="#88CFAC"/>
 
-        <TextBlock x:Name="Info" Text="{Binding LongText}" 
+        <TextBlock x:Name="Info" Text="{Binding LongText}"
            TextWrapping="Wrap" Margin="812,58,11,158" FontSize="20"/>
 
 
