@@ -128,7 +128,7 @@ namespace Kursach
         private void SearchIcon_Click(object sender, RoutedEventArgs e)
         {
             string pattern = SearchField.Text; 
-            if (string.IsNullOrEmpty(pattern))
+            if (string.IsNullOrEmpty(pattern) || pattern == "Поиск")
             {
                 return;
             }

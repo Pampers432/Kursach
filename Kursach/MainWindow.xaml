@@ -7,7 +7,8 @@
         WindowStyle="None">
 
     <Grid>
-
+        <Image x:Name="bg"
+       Stretch="Fill" Source="/bg.png"/>
         <!-- Карта -->
         <Image x:Name="img" Source="/Map.png"
                HorizontalAlignment="Left"
@@ -131,7 +132,7 @@
                    Width="481" 
                    Height="136" 
                    Stroke="Black"
-                   Fill="LightGray" Margin="23,110,0,0"/>
+                   Fill="Transparent" Margin="23,110,0,0"/>
 
         <TextBlock x:Name="Info"
            TextWrapping="Wrap" Margin="29,120,1046,639" FontSize="20" Text="Программа представляет собой базу данных о населенных пунктах, уничтоженных во время Второй мировой войны, а также связанных с ними мемориалах, гетто, братских могилах и жертвах."/>

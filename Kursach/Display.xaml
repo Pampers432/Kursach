@@ -25,8 +25,7 @@
                    VerticalAlignment="Top" 
                    Width="700" 
                    Height="600" 
-                   Stroke="Black"
-                   
+                   Stroke="Black"                   
                    Fill="Transparent"
                    Margin="0,79,49,0"/>
         <TextBlock x:Name="Info" Text="{Binding LongText}"
