@@ -15,32 +15,54 @@
                Width="1026" Height="875" Stretch="UniformToFill" Margin="524,0,0,0"/>
 
         <!-- Кнопки навигации -->
-        <Button Content="Очистить" Margin="23,795,1297,27" FontSize="16" Click="ResetButton_Click"/>
-        <Button Content="Жертвы" Margin="273,795,1046,28" FontSize="16"/>
+        <Button Content="Очистить" Margin="23,795,1297,27" FontSize="16" Click="ResetButton_Click" Background="#88CFAC"/>
+        <Button Content="Жертвы" Margin="273,795,1046,28" FontSize="16" Background="#88CFAC"/>
 
-        <Image x:Name="Хатынь" Source="/Images/Village.png" Stretch="UniformToFill"
-               MouseDown="Хатынь_Click" Cursor="Hand" Margin="1020,299,496,541"/>
+        <!-- Деревни -->
+        <!-- Деревни -->
+        <Image x:Name="Хатынь" Width="25" Height="25" Source="/Images/Village.png"
+           MouseDown="Хатынь_Click" Cursor="Hand" Stretch="Uniform"
+           HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1020,299,0,0"/>
 
-        <Image x:Name="Мемориал_Хатынь"  Source="/Images/Monument.png" Stretch="UniformToFill"
-               MouseDown="МемориалХатынь_Click" Cursor="Hand" Margin="1046,276,469,565"/>
+        <Image x:Name="Багута" Width="26" Height="24" Source="/Images/Village.png"
+       MouseDown="Багута_Click" Cursor="Hand" Stretch="Uniform"
+       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1024,370,0,0" />
 
-        <Image x:Name="Братская_Могила_При_Каменецке"  Source="/Images/MassGrave.png" 
-               MouseDown="БратскаяМогилаПриКаменецке_Click" Cursor="Hand" Stretch="UniformToFill" Margin="775,481,740,359"/>
+        <!-- Мемориалы -->
+        <!-- Мемориалы -->
+        <Image x:Name="Мемориал_Хатынь" Width="25" Height="25" Source="/Images/Monument.png"
+           MouseDown="МемориалХатынь_Click" Cursor="Hand" Stretch="Uniform"
+           HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1041,288,0,0"/>
 
-        <Image x:Name="Полоцкое_Гетто" Width="25" Height="25" Source="/Images/Ghetto.png" Stretch="Uniform"
-               MouseDown="ПолоцкоеГетто_Click" Cursor="Hand"/>
 
+
+        <!-- Братские могилы -->
+        <!-- Братские могилы -->
+        <Image x:Name="Братская_Могила_При_Каменецке" Width="25" Height="25" Source="/Images/MassGrave.png"
+           MouseDown="БратскаяМогилаПриКаменецке_Click" Cursor="Hand" Stretch="Uniform"
+           HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1109,97,0,0"/>
+
+        <Image x:Name="Братская_Могила_Багута" Width="25" Height="25" Source="/Images/MassGrave.png"
+       MouseDown="БратскаяМогилаБагута_Click" Cursor="Hand" Stretch="Uniform"
+       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1041,357,0,0" />
+
+
+        <!-- Еврейские гетто -->
+        <!-- Еврейские гетто -->
+        <Image x:Name="Полоцкое_Гетто" Width="25" Height="25" Source="/Images/Ghetto.png"
+           MouseDown="ПолоцкоеГетто_Click" Cursor="Hand" Stretch="Uniform"
+           HorizontalAlignment="Left" VerticalAlignment="Top" Margin="585,680,0,0"/>
 
         <!-- Поле поиска -->
-        <Rectangle HorizontalAlignment="Left" Height="50" Margin="23,10,0,0" Fill="LightGray"
-                   Stroke="Black" VerticalAlignment="Top" Width="481"/>
+        <Rectangle HorizontalAlignment="Left" Height="50" Margin="23,14,0,0" Fill="#ECB47F"
+                   Stroke="Transparent" VerticalAlignment="Top" Width="481"/>
         <TextBox x:Name="SearchField"
          Text="Поиск" FontSize="16" VerticalContentAlignment="Center" Background="Transparent"
-         Margin="23,10,1081,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="446" Height="50"
-         GotFocus="Search_GotFocus" LostFocus="Search_LostFocus"/>
+         Margin="23,14,1081,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="446" Height="50"
+         GotFocus="Search_GotFocus" LostFocus="Search_LostFocus" BorderBrush="Transparent"/>
 
         <Button Click="SearchIcon_Click"
-        HorizontalAlignment="Left" Height="50" Width="35" Margin="469,10,0,815"
+        HorizontalAlignment="Left" Height="50" Width="35" Margin="469,14,0,811"
         Background="Transparent" BorderThickness="0" Cursor="Hand">
             <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="20" Text="" />
         </Button>
@@ -51,8 +73,9 @@
         <Button x:Name="Village" Width="50" Height="50" Margin="23,622,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                Background="LightGray"
+                Background="#B6E7F1"
                 BorderBrush="Black"
+                Cursor="Hand"
                 Click="Village_Click">
             <Image x:Name="Village_Img" Source="/Images/Village.png" Stretch="Uniform"/>
         </Button>
@@ -61,8 +84,9 @@
         <Button x:Name="Ghetto" Width="50" Height="50" Margin="23,699,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                Background="LightGray"
+                Background="#B6E7F1"
                 BorderBrush="Black"
+                Cursor="Hand"
                 Click="Ghetto_Click">
             <Image x:Name="Ghetto_Img" Source="/Images/Ghetto.png" Stretch="Uniform"/>
         </Button>
@@ -71,8 +95,9 @@
         <Button x:Name="MassGrave" Width="50" Height="50" Margin="273,622,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                Background="LightGray"
                 BorderBrush="Black"
+                Background="#B6E7F1"
+                Cursor="Hand"
                 Click="MassGrave_Click">
             <Image x:Name="MassGrave_Img" Source="/Images/MassGrave.png" Stretch="Uniform"/>
         </Button>
@@ -81,18 +106,35 @@
         <Button x:Name="Monument" Width="50" Height="50" Margin="273,699,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                Background="LightGray"
+                Background="#B6E7F1"
                 BorderBrush="Black"
+                Cursor="Hand"
                 Click="Monument_Click">
             <Image x:Name="Monument_Img" Source="/Images/Monument.png" Stretch="Uniform"/>
         </Button>
 
-        <Label Content="Сгоревшие Деревни" FontSize="16" HorizontalAlignment="Left" Margin="87,634,0,0" VerticalAlignment="Top"/>
-        <Label Content="Еврейские Гетто" FontSize="16" HorizontalAlignment="Left" Margin="87,708,0,0" VerticalAlignment="Top"/>
-        <Label Content="Братские Могилы" FontSize="16" HorizontalAlignment="Left" Margin="340,634,0,0" VerticalAlignment="Top"/>
-        <Label Content="Монументы" FontSize="16" HorizontalAlignment="Left" Margin="340,708,0,0" VerticalAlignment="Top"/>
-        <Label Content="Добавить Гайд по проге" FontSize="45" HorizontalAlignment="Left" Margin="8,312,0,0" VerticalAlignment="Top"/>
+        <Label Content="Сгоревшие Деревни" FontSize="16" HorizontalAlignment="Left" Margin="73,622,0,0" VerticalContentAlignment="Center"
+               MouseDown="Village_Click" Cursor="Hand" VerticalAlignment="Top" Width="175" Height="50"/>
+        <Label Content="Еврейские Гетто" FontSize="16" HorizontalAlignment="Left" Margin="73,699,0,0" VerticalContentAlignment="Center"
+               MouseDown="Ghetto_Click" Cursor="Hand" VerticalAlignment="Top" Width="175" Height="50"/>
+        <Label Content="Братские Могилы" FontSize="16" HorizontalAlignment="Left" Margin="323,622,0,0" VerticalContentAlignment="Center"
+               MouseDown="MassGrave_Click" Cursor="Hand" VerticalAlignment="Top" Width="175" Height="50"/>
+        <Label Content="Монументы" FontSize="16" HorizontalAlignment="Left" Margin="323,699,0,0" VerticalContentAlignment="Center"
+               MouseDown="Monument_Click" Cursor="Hand" VerticalAlignment="Top" Width="175" Height="50"/>
 
+
+        <Image HorizontalAlignment="Left" Height="302" Margin="23,0,0,0" VerticalAlignment="Center" Width="481" Source="/Main.jpg"/>
+
+
+        <Rectangle HorizontalAlignment="Left" 
+                   VerticalAlignment="Top" 
+                   Width="481" 
+                   Height="136" 
+                   Stroke="Black"
+                   Fill="LightGray" Margin="23,110,0,0"/>
+
+        <TextBlock x:Name="Info"
+           TextWrapping="Wrap" Margin="29,120,1046,639" FontSize="20" Text="Программа представляет собой базу данных о населенных пунктах, уничтоженных во время Второй мировой войны, а также связанных с ними мемориалах, гетто, братских могилах и жертвах."/>
 
     </Grid>
 </Window>

@@ -37,7 +37,8 @@ namespace Kursach
 
             Villages = new List<Image>
             {
-                Хатынь
+                Хатынь,
+                Багута
             };
 
             Ghettos = new List<Image>
@@ -47,7 +48,8 @@ namespace Kursach
 
             MassGraves = new List<Image>
             {
-                Братская_Могила_При_Каменецке
+                Братская_Могила_При_Каменецке,
+                Братская_Могила_Багута
             };
             Monuments = new List<Image>
             {
@@ -100,11 +102,15 @@ namespace Kursach
 
         private void ToggleVisibility(Image icon, List<Image> group, ref bool visibilityFlag)
         {
-            icon.Visibility = icon.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            visibilityFlag = icon.Visibility == Visibility.Visible;
+            visibilityFlag = !visibilityFlag;
+            icon.Opacity = visibilityFlag ? 1.0 : 0.5;
+
             ChangeVisibility(group, visibilityFlag);
         }
 
+
+
+        // Фильтры
         private void Village_Click(object sender, RoutedEventArgs e) =>
             ToggleVisibility(Village_Img, Villages, ref VillageVisibility);
 
@@ -117,6 +123,8 @@ namespace Kursach
         private void Monument_Click(object sender, RoutedEventArgs e) =>
             ToggleVisibility(Monument_Img, Monuments, ref MonumentVisibility);
 
+
+        // Поиск
         private void SearchIcon_Click(object sender, RoutedEventArgs e)
         {
             string pattern = SearchField.Text; 
@@ -155,29 +163,49 @@ namespace Kursach
         /// <summary>
         /// Функционал
         /// </summary>
+    
+        // Деревни
         private void Хатынь_Click(object sender, MouseButtonEventArgs e)
         {
             int id = 1;
             MoveToDisplay(id, "Деревня");            
         }
 
+        private void Багута_Click(object sender, MouseButtonEventArgs e)
+        {
+            int id = 2;
+            MoveToDisplay(id, "Деревня");
+        }
+
+        // Мемориалы
         private void МемориалХатынь_Click(object sender, MouseButtonEventArgs e)
         {
             int id = 1;
             MoveToDisplay(id, "Монумент");
         }
 
+        // Гетто
         private void ПолоцкоеГетто_Click(object sender, MouseButtonEventArgs e)
         {
             int id = 1;
             MoveToDisplay(id, "Гетто");
         }
 
+        // Брасткие могилы
         private void БратскаяМогилаПриКаменецке_Click(object sender, MouseButtonEventArgs e)
         {
             int id = 1;
             MoveToDisplay(id, "Могила");
         }
+
+        private void БратскаяМогилаБагута_Click(object sender, MouseButtonEventArgs e)
+        {
+            int id = 2;
+            MoveToDisplay(id, "Могила");
+        }
+
+
+
 
         private void MoveToDisplay(int id, string tableName)
         {

@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Main.jpg" />
     <None Remove="Map.png" />
     <None Remove="MassGrave.png" />
     <None Remove="Monument.png" />
@@ -26,6 +27,7 @@
     <Resource Include="Images\Monument.png" />
     <Resource Include="Images\Village.png" />
     <Resource Include="Images\Хатынь.png" />
+    <Resource Include="Main.jpg" />
     <Resource Include="Map.png" />
   </ItemGroup>
 
