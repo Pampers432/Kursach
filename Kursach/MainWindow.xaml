@@ -18,17 +18,17 @@
         <Button Content="Очистить" Margin="23,795,1297,27" FontSize="16" Click="ResetButton_Click"/>
         <Button Content="Жертвы" Margin="273,795,1046,28" FontSize="16"/>
 
-        <Image x:Name="Хатынь" Source="/Images/Village.png" Stretch="UniformToFill"
+        <Image x:Name="Хатынь" Width="25" Height="25" Source="/Images/Village.png" Stretch="UniformToFill"
                MouseDown="Хатынь_Click" Cursor="Hand" Margin="1020,299,496,541"/>
 
-        <Image x:Name="Мемориал_Хатынь"  Source="/Images/Monument.png" Stretch="UniformToFill"
-               MouseDown="МемориалХатынь_Click" Cursor="Hand" Margin="1046,276,469,565"/>
+        <Image x:Name="Мемориал_Хатынь" Width="25" Height="25"  Source="/Images/Monument.png" Stretch="UniformToFill"
+               MouseDown="МемориалХатынь_Click" Cursor="Hand" Margin="1041,288,484,562"/>
 
-        <Image x:Name="Братская_Могила_При_Каменецке"  Source="/Images/MassGrave.png" 
-               MouseDown="БратскаяМогилаПриКаменецке_Click" Cursor="Hand" Stretch="UniformToFill" Margin="775,481,740,359"/>
+        <Image x:Name="Братская_Могила_При_Каменецке" Width="25" Height="25"  Source="/Images/MassGrave.png" 
+               MouseDown="БратскаяМогилаПриКаменецке_Click" Cursor="Hand" Stretch="UniformToFill" Margin="1109,97,406,743"/>
 
         <Image x:Name="Полоцкое_Гетто" Width="25" Height="25" Source="/Images/Ghetto.png" Stretch="Uniform"
-               MouseDown="ПолоцкоеГетто_Click" Cursor="Hand"/>
+               MouseDown="ПолоцкоеГетто_Click" Cursor="Hand" Margin="585,680,940,170"/>
 
 
         <!-- Поле поиска -->
