@@ -37,7 +37,8 @@ namespace Kursach
 
             Villages = new List<Image>
             {
-                Хатынь
+                Хатынь,
+                Багута
             };
 
             Ghettos = new List<Image>
@@ -47,7 +48,8 @@ namespace Kursach
 
             MassGraves = new List<Image>
             {
-                Братская_Могила_При_Каменецке
+                Братская_Могила_При_Каменецке,
+                Братская_Могила_Багута
             };
             Monuments = new List<Image>
             {

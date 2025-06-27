@@ -15,8 +15,8 @@
                Width="1026" Height="875" Stretch="UniformToFill" Margin="524,0,0,0"/>
 
         <!-- Кнопки навигации -->
-        <Button Content="Очистить" Margin="23,795,1297,27" FontSize="16" Click="ResetButton_Click"/>
-        <Button Content="Жертвы" Margin="273,795,1046,28" FontSize="16"/>
+        <Button Content="Очистить" Margin="23,795,1297,27" FontSize="16" Click="ResetButton_Click" Background="#88CFAC"/>
+        <Button Content="Жертвы" Margin="273,795,1046,28" FontSize="16" Background="#88CFAC"/>
 
         <!-- Деревни -->
         <!-- Деревни -->
@@ -54,12 +54,12 @@
            HorizontalAlignment="Left" VerticalAlignment="Top" Margin="585,680,0,0"/>
 
         <!-- Поле поиска -->
-        <Rectangle HorizontalAlignment="Left" Height="50" Margin="23,10,0,0" Fill="LightGray"
-                   Stroke="Black" VerticalAlignment="Top" Width="481"/>
+        <Rectangle HorizontalAlignment="Left" Height="50" Margin="23,10,0,0" Fill="#ECB47F"
+                   Stroke="Transparent" VerticalAlignment="Top" Width="481"/>
         <TextBox x:Name="SearchField"
          Text="Поиск" FontSize="16" VerticalContentAlignment="Center" Background="Transparent"
          Margin="23,10,1081,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="446" Height="50"
-         GotFocus="Search_GotFocus" LostFocus="Search_LostFocus"/>
+         GotFocus="Search_GotFocus" LostFocus="Search_LostFocus" BorderBrush="Transparent"/>
 
         <Button Click="SearchIcon_Click"
         HorizontalAlignment="Left" Height="50" Width="35" Margin="469,10,0,815"
@@ -73,7 +73,7 @@
         <Button x:Name="Village" Width="50" Height="50" Margin="23,622,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                Background="LightGray"
+                Background="#B6E7F1"
                 BorderBrush="Black"
                 Click="Village_Click">
             <Image x:Name="Village_Img" Source="/Images/Village.png" Stretch="Uniform"/>
@@ -83,7 +83,7 @@
         <Button x:Name="Ghetto" Width="50" Height="50" Margin="23,699,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                Background="LightGray"
+                Background="#B6E7F1"
                 BorderBrush="Black"
                 Click="Ghetto_Click">
             <Image x:Name="Ghetto_Img" Source="/Images/Ghetto.png" Stretch="Uniform"/>
@@ -93,8 +93,8 @@
         <Button x:Name="MassGrave" Width="50" Height="50" Margin="273,622,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                Background="LightGray"
                 BorderBrush="Black"
+                Background="#B6E7F1"
                 Click="MassGrave_Click">
             <Image x:Name="MassGrave_Img" Source="/Images/MassGrave.png" Stretch="Uniform"/>
         </Button>
@@ -103,7 +103,7 @@
         <Button x:Name="Monument" Width="50" Height="50" Margin="273,699,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                Background="LightGray"
+                Background="#B6E7F1"
                 BorderBrush="Black"
                 Click="Monument_Click">
             <Image x:Name="Monument_Img" Source="/Images/Monument.png" Stretch="Uniform"/>
@@ -113,7 +113,7 @@
         <Label Content="Еврейские Гетто" FontSize="16" HorizontalAlignment="Left" Margin="87,708,0,0" VerticalAlignment="Top"/>
         <Label Content="Братские Могилы" FontSize="16" HorizontalAlignment="Left" Margin="340,634,0,0" VerticalAlignment="Top"/>
         <Label Content="Монументы" FontSize="16" HorizontalAlignment="Left" Margin="340,708,0,0" VerticalAlignment="Top"/>
-        <Label Content="Добавить Гайд по проге" FontSize="45" HorizontalAlignment="Left" Margin="8,312,0,0" VerticalAlignment="Top"/>
+        <Label Content="" FontSize="16" HorizontalAlignment="Left" Margin="8,312,0,0" VerticalAlignment="Top"/>
 
 
     </Grid>
