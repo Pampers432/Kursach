@@ -10,10 +10,28 @@
         <Image x:Name="bg"
        Stretch="Fill" Source="/bg.png"/>
         <!-- Карта -->
-        <Image x:Name="img" Source="/Map.png"
+        <Image x:Name="img" Source="/Map.png"               
                HorizontalAlignment="Left"
                VerticalAlignment="Center" 
                Width="1026" Height="875" Stretch="UniformToFill" Margin="524,0,0,0"/>
+
+        <Button Content="✖"
+        Width="35"
+        Height="35"
+        FontSize="14"
+        FontWeight="Bold"
+        HorizontalAlignment="Right"
+        VerticalAlignment="Top"
+        Margin="0,14,10,0"
+        Click="CloseButton_Click"
+        Background="Transparent"
+        BorderBrush="Black"
+        BorderThickness="2"
+        Foreground="Red"
+        Cursor="Hand"
+        ToolTip="Закрыть"/>
+
+
 
         <!-- Кнопки навигации -->
         <Button Content="Очистить" Margin="23,795,1297,27" FontSize="16" Click="ResetButton_Click" Background="#88CFAC"/>
