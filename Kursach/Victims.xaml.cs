@@ -107,46 +107,40 @@ namespace Kursach
             }
         }
 
-
         private void VictimList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-{
-    var item = VictimList.SelectedItem;
-    var selected = (Victim)item.GetType().GetProperty("Victim").GetValue(item);
-
-    FullName.Text = $"{selected.LastName} {selected.Name} {selected.MiddleName}";
-    BirthDate.Text = selected.BirthDate.ToShortDateString();
-    DeathDate.Text = selected.DeathDate.ToShortDateString();
-    VictimDescription.Text = selected.Description;
-
-    // Загрузка изображения
-    if (string.IsNullOrEmpty(selected.ImagePath))
-    {
-        VictimPhoto.Source = null;
-        textBlock.Text = "Нет изображения";
-        textBlock.Visibility = Visibility.Visible;
-    }
-    else
-    {
-        string fullPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, selected.ImagePath.TrimStart('\\', '/'));
-
-        if (File.Exists(fullPath))
         {
-            VictimPhoto.Source = new BitmapImage(new Uri(fullPath, UriKind.Absolute));
-            VictimPhoto.Visibility = Visibility.Visible;
-            textBlock.Visibility = Visibility.Collapsed;
+            var item = VictimList.SelectedItem;
+            var selected = (Victim)item.GetType().GetProperty("Victim").GetValue(item);
+
+            FullName.Text = $"{selected.LastName} {selected.Name} {selected.MiddleName}";
+            BirthDate.Text = selected.BirthDate.ToShortDateString();
+            DeathDate.Text = selected.DeathDate.ToShortDateString();
+            VictimDescription.Text = selected.Description;
+
+            // Загрузка изображения
+            if (string.IsNullOrEmpty(selected.ImagePath))
+            {
+                VictimPhoto.Source = null;
+                textBlock.Text = "Нет изображения";
+                textBlock.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                string fullPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, selected.ImagePath.TrimStart('\\', '/'));
+
+                if (File.Exists(fullPath))
+                {
+                    VictimPhoto.Source = new BitmapImage(new Uri(fullPath, UriKind.Absolute));
+                    VictimPhoto.Visibility = Visibility.Visible;
+                    textBlock.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    VictimPhoto.Source = null;
+                    textBlock.Text = "Нет изображения";
+                    textBlock.Visibility = Visibility.Visible;
+                }
+            }
         }
-        else
-        {
-            VictimPhoto.Source = null;
-            textBlock.Text = "Нет изображения";
-            textBlock.Visibility = Visibility.Visible;
-        }
-    }
-}
-
-
-
-
-
     }
 }

@@ -9,7 +9,6 @@
         Background="White"
         Closing="Window_Closing">
 
-
     <Grid>
         <!-- Задний фон -->
         <Image Source="/bg.png"
@@ -58,7 +57,7 @@
 
         <!-- Фото жертвы -->
         <Image x:Name="VictimPhoto"
-                   Panel.ZIndex="2"
+           Panel.ZIndex="2"
            Width="180" Height="180"
            Stretch="UniformToFill"
            HorizontalAlignment="Right"
@@ -67,6 +66,7 @@
            Margin="0,104,51,0"/>
 
         <TextBlock x:Name="textBlock"
+               Panel.ZIndex="2"
                Text="Нет изображения"
                Foreground="Gray"
                FontStyle="Italic"
@@ -74,7 +74,7 @@
                HorizontalAlignment="Left"
                VerticalAlignment="Bottom"
                TextAlignment="Center"
-               Visibility="Visible" Margin="1383,0,0,742"/>
+               Visibility="Collapsed" Margin="1383,0,0,742"/>
 
         <!-- Панель информации -->
         <Border Background="#F5FFFFFF"
