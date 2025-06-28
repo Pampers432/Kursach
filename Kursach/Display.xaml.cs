@@ -22,6 +22,13 @@ namespace Kursach
             }
         }
 
+        // Выход
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        // Вернуться на главную
         private void ReturnButton_Click(object sender, RoutedEventArgs e)
         {
             IsReturningToMain = true;
@@ -88,14 +95,18 @@ namespace Kursach
         private void GetVillageInfo(Village village, Location location)
         {
             // Устанавливает текст в `TextBox`
-            Info.Text = $@"                            Деревня {village.Name}
+            Info.Text = $@"Деревня {village.Name}
 
-                Расположение: {location.Region} область, {location.District} округ (координаты: {location.Latitude}, {location.Longitude}) 
-                До уничтожения в деревне проживало {village.PopulationBefore} человек. 
-                Причина уничтожения: {village.Cause}
+Расположение:
+    {location.Region} область, {location.District} округ
+    (Координаты: {location.Latitude}, {location.Longitude})
+До уничтожения проживало: {village.PopulationBefore} человек
 
-                Описание: {village.Description} {(village.MemorialExists ? "На месте трагедии установлен мемориальный комплекс." : "Мемориал на месте событий отсутствует.")}
+Описание:
+    {village.Description}
+    {(village.MemorialExists ? "На месте трагедии установлен мемориальный комплекс." : "Мемориал на месте событий отсутствует.")}
 ";
+
 
 
             // Загружает изображение в `Image` компонент
@@ -137,12 +148,16 @@ namespace Kursach
         private void SetMonumentInfo(Monument monument, Location location)
         {
             // Устанавливает текст в `TextBox`
-            Info.Text = $@"                            {monument.Name}
+            Info.Text = $@"{monument.Name}
 
-                Расположение: {location.Region} область, {location.District} округ (координаты: {location.Latitude}, {location.Longitude}).
+Расположение:
+    {location.Region} область, {location.District} округ
+    (Координаты: {location.Latitude}, {location.Longitude})
 
-                Описание: {monument.Description}
+Описание:
+    {monument.Description}
 ";
+
 
 
             // Загружает изображение в `Image` компонент
@@ -179,14 +194,19 @@ namespace Kursach
         
         private void SetGhettoInfo(Ghetto ghetto, Location location)
         {
-            Info.Text = $@"                            {ghetto.Name}
+            Info.Text = $@"{ghetto.Name}
 
-                Расположение: {location.Region} область, {location.District} округ (координаты: {location.Latitude}, {location.Longitude}).
-                Период существования: {ghetto.EstablishedDate} - {ghetto.LiquidationDate}
-                Общее количество узников составляет около: {ghetto.Population} Примерное количество жертв: {ghetto.VictimsCount}
+Расположение:
+    {location.Region} область, {location.District} округ
+    (Координаты: {location.Latitude}, {location.Longitude})
+Период существования: {ghetto.EstablishedDate:dd.MM.yyyy} – {ghetto.LiquidationDate:dd.MM.yyyy}
+Количество узников: {ghetto.Population}
+Примерное количество жертв: {ghetto.VictimsCount}
 
-                Описание: {ghetto.Description}
-    ";
+Описание:
+    {ghetto.Description}
+";
+
 
             SetImgSource(ghetto.ImagePath);
         }
@@ -222,13 +242,18 @@ namespace Kursach
 
         private void SetMassGraveInfo(MassGrave massGrave, Location location)
         {
-            Info.Text = $@"                            {massGrave.Name}
+            Info.Text = $@"{massGrave.Name}
 
-                Расположение: {location.Region} область, {location.District} округ (координаты: {location.Latitude}, {location.Longitude}).
-                Дата создания: {massGrave.InstallationDate} Примерное количество жертв: {massGrave.VictimsCount}
+Расположение:
+    {location.Region} область, {location.District} округ
+    (Координаты: {location.Latitude}, {location.Longitude})
+Дата создания: {massGrave.InstallationDate:dd.MM.yyyy}
+Примерное количество жертв: {massGrave.VictimsCount}
 
-                Описание: {massGrave.Description}
-    ";
+Описание:
+    {massGrave.Description}
+";
+
 
             SetImgSource(massGrave.ImagePath);
         }

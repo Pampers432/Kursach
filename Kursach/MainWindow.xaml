@@ -4,20 +4,25 @@
         Title="MainWindow"
         WindowStartupLocation="CenterScreen"
         Width="1550" Height="875"
+        ResizeMode="NoResize"
         WindowStyle="None">
 
     <Grid>
         <Image x:Name="bg"
        Stretch="Fill" Source="/bg.png"/>
         <!-- Карта -->
-        <Image x:Name="img" Source="/Map.png"
+        <Image x:Name="img" Source="/Map.png"               
                HorizontalAlignment="Left"
                VerticalAlignment="Center" 
                Width="1026" Height="875" Stretch="UniformToFill" Margin="524,0,0,0"/>
 
+        <Button Content="✖" Width="35" Height="35" FontSize="14" FontWeight="Bold" HorizontalAlignment="Right"
+        VerticalAlignment="Top" Margin="0,14,16,0" Click="CloseButton_Click" Background="LightBlue" 
+        BorderBrush="Black" BorderThickness="2" Foreground="Red" Cursor="Hand" ToolTip="Закрыть"/>
+
         <!-- Кнопки навигации -->
         <Button Content="Очистить" Margin="23,795,1297,27" FontSize="16" Click="ResetButton_Click" Background="#88CFAC"/>
-        <Button Content="Жертвы" Margin="273,795,1046,28" FontSize="16" Background="#88CFAC"/>
+        <Button Content="Жертвы" Margin="273,795,1046,28" FontSize="16" Click="VictimsButton_Click" Background="#88CFAC"/>
 
         <!-- Деревни -->
         <!-- Деревни -->
@@ -136,6 +141,5 @@
 
         <TextBlock x:Name="Info"
            TextWrapping="Wrap" Margin="29,126,1046,629" FontSize="19"><Run Text="Программа представляет собой "/><Run Language="ru-ru" Text="интерактивную карту"/><Run Text=" о населенных пунктах, уничтоженных во время Второй мировой войны, а также связанных с ними мемориалах, гетто, братских могилах и жертвах."/></TextBlock>
-
     </Grid>
 </Window>

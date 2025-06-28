@@ -5,6 +5,7 @@
         WindowStartupLocation="CenterScreen"
         Width="1550" Height="875"
         WindowStyle="None"
+        ResizeMode="NoResize"
         Closing="Window_Closing"
         >
 
@@ -21,17 +22,49 @@
                HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed"/>
         <Image Margin="2500,1118,-2500,-1118"/>
 
-        <Rectangle HorizontalAlignment="Right" 
-                   VerticalAlignment="Top" 
-                   Width="700" 
-                   Height="600" 
-                   Stroke="Black"                   
-                   Fill="Transparent"
-                   Margin="0,79,49,0"/>
-        <TextBlock x:Name="Info" Text="{Binding LongText}"
-           TextWrapping="Wrap" Margin="801,79,49,196" FontSize="20"/>
+        <!-- Панель информации -->
+        <Border Background="Transparent"
+        BorderBrush="Black"
+        BorderThickness="1"
+        CornerRadius="5"
+        Margin="814,80,63,60"
+        Panel.ZIndex="1">
+            <Grid Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="95*"/>
+                    <ColumnDefinition Width="536*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Заголовок -->
+                <TextBlock Grid.Row="0"
+                   Text="Информация"
+                   FontSize="26"
+                   FontWeight="Bold"
+                   TextAlignment="Center"
+                   VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+
+                <ScrollViewer Grid.Row="1"
+              Grid.ColumnSpan="2"
+              VerticalScrollBarVisibility="Auto">
+                    <TextBlock x:Name="Info"
+                       FontSize="20"
+                       TextWrapping="Wrap"
+                       Padding="10"
+                       TextAlignment="Justify"/>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+
 
         <Button Content="Вернуться" Margin="39,749,1293,73" Click="ReturnButton_Click" FontSize="16" Background="#88CFAC"/>
         <Button Content="Жертвы" Margin="322,749,1010,75" FontSize="16" Background="#88CFAC"/>
+
+        <Button Content="✖" Width="35" Height="35" FontSize="14" FontWeight="Bold" HorizontalAlignment="Right"
+        VerticalAlignment="Top" Margin="0,14,16,0" Click="CloseButton_Click" Background="LightBlue" 
+        BorderBrush="Black" BorderThickness="2" Foreground="Red" Cursor="Hand" ToolTip="Закрыть"/>
     </Grid>
 </Window>

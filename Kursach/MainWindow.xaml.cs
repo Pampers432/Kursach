@@ -62,6 +62,13 @@ namespace Kursach
                         .Concat(Monuments)
                         .ToList();
         }
+        
+        // Выход
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
 
         // Кнопка очистки
         private void ResetButton_Click(object sender, RoutedEventArgs e)
@@ -213,6 +220,15 @@ namespace Kursach
             display.ShowDialog();
 
             if (display.IsReturningToMain)
+                Show();
+        }
+
+        private void VictimsButton_Click(object sender, RoutedEventArgs e)
+        {
+            Victims victims = new Victims();
+            victims.ShowDialog();
+
+            if (victims.IsReturningToMain)
                 Show();
         }
     }
