@@ -5,6 +5,7 @@
         WindowStartupLocation="CenterScreen"
         Width="1550" Height="875"
         WindowStyle="None"
+        ResizeMode="NoResize"
         Closing="Window_Closing"
         >
 
@@ -29,9 +30,13 @@
                    Fill="Transparent"
                    Margin="0,79,49,0"/>
         <TextBlock x:Name="Info" Text="{Binding LongText}"
-           TextWrapping="Wrap" Margin="801,79,49,196" FontSize="20"/>
+           TextWrapping="Wrap" Margin="814,92,63,210" FontSize="20"/>
 
         <Button Content="Вернуться" Margin="39,749,1293,73" Click="ReturnButton_Click" FontSize="16" Background="#88CFAC"/>
         <Button Content="Жертвы" Margin="322,749,1010,75" FontSize="16" Background="#88CFAC"/>
+        
+        <Button Content="✖" Width="35" Height="35" FontSize="14" FontWeight="Bold" HorizontalAlignment="Right"
+        VerticalAlignment="Top" Margin="0,14,16,0" Click="CloseButton_Click" Background="LightBlue" 
+        BorderBrush="Black" BorderThickness="2" Foreground="Red" Cursor="Hand" ToolTip="Закрыть"/>
     </Grid>
 </Window>

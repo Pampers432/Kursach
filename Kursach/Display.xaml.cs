@@ -22,6 +22,13 @@ namespace Kursach
             }
         }
 
+        // Выход
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        // Вернуться на главную
         private void ReturnButton_Click(object sender, RoutedEventArgs e)
         {
             IsReturningToMain = true;

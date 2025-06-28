@@ -222,5 +222,14 @@ namespace Kursach
             if (display.IsReturningToMain)
                 Show();
         }
+
+        private void VictimsButton_Click(object sender, RoutedEventArgs e)
+        {
+            Victims victims = new Victims();
+            victims.ShowDialog();
+
+            if (victims.IsReturningToMain)
+                Show();
+        }
     }
 }
