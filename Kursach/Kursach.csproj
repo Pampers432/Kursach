@@ -15,6 +15,7 @@
     <None Remove="MassGrave.png" />
     <None Remove="Monument.png" />
     <None Remove="Village.png" />
+    <None Remove="Савицкий.png" />
     <None Remove="Хатынь.png" />
   </ItemGroup>
 
@@ -31,6 +32,7 @@
     <Resource Include="Images\Хатынь.png" />
     <Resource Include="Main.jpg" />
     <Resource Include="Map.png" />
+    <Resource Include="Савицкий.png" />
   </ItemGroup>
 
 </Project>

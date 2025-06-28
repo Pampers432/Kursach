@@ -27,7 +27,7 @@
         <!-- Область поиска -->
         <Grid Margin="30,30,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" Height="35" Panel.ZIndex="1">
             <TextBox x:Name="SearchBox"
-                     FontSize="16"
+                     FontSize="18"
                      VerticalContentAlignment="Center"
                      TextChanged="SearchBox_TextChanged"
                      GotFocus="SearchBox_GotFocus"
@@ -39,7 +39,8 @@
                        IsHitTestVisible="False"
                        Margin="5,0,0,0"
                        VerticalAlignment="Center"
-                       Visibility="Visible"/>
+                       Visibility="Visible"
+                       FontSize="16"/>
         </Grid>
 
         <!-- Список жертв -->
@@ -51,38 +52,73 @@
                   Background="#E5FFFFFF"
                   BorderBrush="#888"
                   BorderThickness="1"
-                  FontSize="14"
+                  FontSize="18"
                   DisplayMemberPath="FullName"
                   Panel.ZIndex="1"/>
 
+        <!-- Фото жертвы -->
+        <Image x:Name="VictimPhoto"
+                   Panel.ZIndex="2"
+           Width="180" Height="180"
+           Stretch="UniformToFill"
+           HorizontalAlignment="Right"
+           VerticalAlignment="Top"
+           Visibility="Collapsed"
+           Margin="0,104,51,0"/>
+
+        <TextBlock x:Name="textBlock"
+               Text="Нет изображения"
+               Foreground="Gray"
+               FontStyle="Italic"
+               FontSize="14"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Bottom"
+               TextAlignment="Center"
+               Visibility="Visible" Margin="1383,0,0,742"/>
+
         <!-- Панель информации -->
         <Border Background="#F5FFFFFF"
-                BorderBrush="DarkGray"
-                BorderThickness="1"
-                CornerRadius="5"
-                Margin="560,80,30,131"
-                Panel.ZIndex="1">
-            <StackPanel Margin="20">
-                <TextBlock Text="Информация о жертве" FontSize="24" FontWeight="Bold" Margin="0,0,0,15"/>
-                <Image x:Name="VictimPhoto"
-                       Width="180" Height="180"
-                       Stretch="UniformToFill"
-                       Margin="0,0,0,15"
-                       HorizontalAlignment="Left"
-                       Visibility="Collapsed"/>
-                <TextBlock Text="ФИО:" FontWeight="Bold"/>
-                <TextBlock x:Name="FullName" Margin="0,0,0,10"/>
-                <TextBlock Text="Дата рождения:" FontWeight="Bold"/>
-                <TextBlock x:Name="BirthDate" Margin="0,0,0,10"/>
-                <TextBlock Text="Дата смерти:" FontWeight="Bold"/>
-                <TextBlock x:Name="DeathDate" Margin="0,0,0,10"/>
-                <TextBlock Text="Описание:" FontWeight="Bold"/>
-                <TextBlock x:Name="VictimDescription"
-                           TextWrapping="Wrap"
-                           Margin="0,0,0,10"
-                           FontSize="14"/>
-            </StackPanel>
+        BorderBrush="DarkGray"
+        BorderThickness="1"
+        CornerRadius="5"
+        Margin="560,80,30,131"
+        Panel.ZIndex="1">
+            <Grid Margin="20">
+                <!-- Определим две строки и два столбца -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
 
+                <!-- Заголовок -->
+                <TextBlock Grid.Row="0" Grid.Column="0"
+                   Text="Информация о жертве"
+                   FontSize="26" FontWeight="Bold"
+                   Margin="0,0,0,15"
+                   VerticalAlignment="Top"/>
+
+
+
+
+                <!-- Описание под заголовком, на всю ширину -->
+                <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+                    <TextBlock Text="ФИО:" FontSize="20" FontWeight="Bold"/>
+                    <TextBlock x:Name="FullName" FontSize="20" Margin="0,0,0,10"/>
+                    <TextBlock Text="Дата рождения:" FontSize="20" FontWeight="Bold"/>
+                    <TextBlock x:Name="BirthDate" FontSize="20" Margin="0,0,0,10"/>
+                    <TextBlock Text="Дата смерти:" FontSize="20" FontWeight="Bold"/>
+                    <TextBlock x:Name="DeathDate" FontSize="20" Margin="0,0,0,10"/>
+                    <TextBlock Text="Описание:" FontSize="20" FontWeight="Bold"/>
+                    <TextBlock x:Name="VictimDescription"
+                       FontSize="20"
+                       TextWrapping="Wrap"
+                       Margin="0,0,0,10"/>
+                </StackPanel>
+            </Grid>
         </Border>
     </Grid>
 </Window>

@@ -29,10 +29,18 @@ namespace Kursach
         {
             InitializeComponent();
 
+            Thread.Sleep(100);
+
             using (var db = new MyDBContext()) 
             {
                 allVictims = db.Victims.ToList();
-                VictimList.ItemsSource = allVictims;
+                VictimList.ItemsSource = allVictims
+                    .Select(v => new
+                    {
+                        Victim = v,
+                        FullName = $"{v.LastName} {v.Name} {v.MiddleName}"
+                    })
+                    .ToList();
             }
         }
 
@@ -57,18 +65,6 @@ namespace Kursach
             Close();
         }
 
-        private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            string query = SearchBox.Text.ToLower();
-
-            //if (string.IsNullOrWhiteSpace(query))
-            //    VictimList.ItemsSource = allVictims;
-            //else
-            //    VictimList.ItemsSource = allVictims
-            //        .Where(v => v.FullName.ToLower().Contains(query))
-            //        .ToList();
-        }
-
         private void SearchBox_GotFocus(object sender, RoutedEventArgs e)
         {
             Placeholder.Visibility = Visibility.Collapsed;
@@ -79,26 +75,78 @@ namespace Kursach
             Placeholder.Visibility = string.IsNullOrWhiteSpace(SearchBox.Text) ? Visibility.Visible : Visibility.Collapsed;
         }
 
-        private void VictimList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            //if (VictimList.SelectedItem is Victim selected)
-            //{
-            //    FullName.Text = selected.FullName;
-            //    BirthDate.Text = selected.BirthDate.ToShortDateString();
-            //    DeathDate.Text = selected.DeathDate.ToShortDateString();
-            //    VictimDescription.Text = selected.Description;
+            string query = SearchBox.Text.ToLower();
 
-            //    if (!string.IsNullOrEmpty(selected.ImagePath) && File.Exists(selected.ImagePath))
-            //    {
-            //        VictimPhoto.Source = new BitmapImage(new Uri(selected.ImagePath, UriKind.RelativeOrAbsolute));
-            //        VictimPhoto.Visibility = Visibility.Visible;
-            //    }
-            //    else
-            //    {
-            //        VictimPhoto.Visibility = Visibility.Collapsed;
-            //    }
-            //}
+            if (!string.IsNullOrWhiteSpace(query))
+            {
+                VictimList.ItemsSource = allVictims
+                    .Where(v =>
+                        $"{v.LastName} {v.Name} {v.MiddleName}".ToLower().Contains(query))
+                    .Select(v => new
+                    {
+                        Victim = v,
+                        FullName = $"{v.LastName} {v.Name} {v.MiddleName}"
+                    })
+                    .ToList();
+
+                VictimList.DisplayMemberPath = "FullName";
+            }
+            else
+            {
+                VictimList.ItemsSource = allVictims
+                    .Select(v => new
+                    {
+                        Victim = v,
+                        FullName = $"{v.LastName} {v.Name} {v.MiddleName}"
+                    })
+                    .ToList();
+
+                VictimList.DisplayMemberPath = "FullName";
+            }
         }
+
+
+        private void VictimList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+{
+    var item = VictimList.SelectedItem;
+    var selected = (Victim)item.GetType().GetProperty("Victim").GetValue(item);
+
+    FullName.Text = $"{selected.LastName} {selected.Name} {selected.MiddleName}";
+    BirthDate.Text = selected.BirthDate.ToShortDateString();
+    DeathDate.Text = selected.DeathDate.ToShortDateString();
+    VictimDescription.Text = selected.Description;
+
+    // Загрузка изображения
+    if (string.IsNullOrEmpty(selected.ImagePath))
+    {
+        VictimPhoto.Source = null;
+        textBlock.Text = "Нет изображения";
+        textBlock.Visibility = Visibility.Visible;
+    }
+    else
+    {
+        string fullPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, selected.ImagePath.TrimStart('\\', '/'));
+
+        if (File.Exists(fullPath))
+        {
+            VictimPhoto.Source = new BitmapImage(new Uri(fullPath, UriKind.Absolute));
+            VictimPhoto.Visibility = Visibility.Visible;
+            textBlock.Visibility = Visibility.Collapsed;
+        }
+        else
+        {
+            VictimPhoto.Source = null;
+            textBlock.Text = "Нет изображения";
+            textBlock.Visibility = Visibility.Visible;
+        }
+    }
+}
+
+
+
+
 
     }
 }
