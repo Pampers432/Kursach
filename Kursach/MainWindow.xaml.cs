@@ -142,7 +142,7 @@ namespace Kursach
 
             foreach (Image img in AllImgs)
             {
-                if (!img.Name.StartsWith(pattern) && !img.Name.ToLower().StartsWith(pattern.ToLower()))
+                if (!img.Name.Contains(pattern) && !img.Name.ToLower().Contains(pattern.ToLower()))
                 {
                     img.Visibility = Visibility.Collapsed;
                 }
@@ -210,9 +210,6 @@ namespace Kursach
             int id = 2;
             MoveToDisplay(id, "Могила");
         }
-
-
-
 
         private void MoveToDisplay(int id, string tableName)
         {
