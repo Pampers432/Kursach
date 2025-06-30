@@ -38,7 +38,8 @@ namespace Kursach
             Villages = new List<Image>
             {
                 Хатынь,
-                Багута
+                Багута,
+                Батуринка
             };
 
             Ghettos = new List<Image>
@@ -49,11 +50,13 @@ namespace Kursach
             MassGraves = new List<Image>
             {
                 Братская_Могила_При_Каменецке,
-                Братская_Могила_Багута
+                Братская_Могила_Багута,
+                Братская_Могила_Батуринка
             };
             Monuments = new List<Image>
             {
-                Мемориал_Хатынь
+                Мемориал_Хатынь,
+                Мемориал_Батуринка
             };
 
             AllImgs = Villages
@@ -61,6 +64,7 @@ namespace Kursach
                         .Concat(MassGraves)
                         .Concat(Monuments)
                         .ToList();
+
         }
         
         // Выход
@@ -174,43 +178,54 @@ namespace Kursach
         // Деревни
         private void Хатынь_Click(object sender, MouseButtonEventArgs e)
         {
-            int id = 1;
-            MoveToDisplay(id, "Деревня");            
+            MoveToDisplay(1, "Деревня");            
         }
 
         private void Багута_Click(object sender, MouseButtonEventArgs e)
         {
-            int id = 2;
-            MoveToDisplay(id, "Деревня");
+            MoveToDisplay(2, "Деревня");
+        }
+
+        private void Батуринка_Click(object sender, MouseButtonEventArgs e)
+        {
+            MoveToDisplay(3, "Деревня");
         }
 
         // Мемориалы
         private void МемориалХатынь_Click(object sender, MouseButtonEventArgs e)
         {
-            int id = 1;
-            MoveToDisplay(id, "Монумент");
+            MoveToDisplay(1, "Монумент");
+        }
+
+        private void МемориалБатуринка_Click(object sender, MouseButtonEventArgs e)
+        {
+            MoveToDisplay(2, "Монумент");
         }
 
         // Гетто
         private void ПолоцкоеГетто_Click(object sender, MouseButtonEventArgs e)
         {
-            int id = 1;
-            MoveToDisplay(id, "Гетто");
+            MoveToDisplay(1, "Гетто");
         }
 
         // Брасткие могилы
         private void БратскаяМогилаПриКаменецке_Click(object sender, MouseButtonEventArgs e)
         {
-            int id = 1;
-            MoveToDisplay(id, "Могила");
+            MoveToDisplay(1, "Могила");
         }
 
         private void БратскаяМогилаБагута_Click(object sender, MouseButtonEventArgs e)
         {
-            int id = 2;
-            MoveToDisplay(id, "Могила");
+            MoveToDisplay(2, "Могила");
         }
 
+        private void БратскаяМогилаБатуринка_Click(object sender, MouseButtonEventArgs e)
+        {
+            MoveToDisplay(3, "Могила");
+        }
+
+
+        // Переход между формами
         private void MoveToDisplay(int id, string tableName)
         {
             Display display = new Display(id, tableName);
