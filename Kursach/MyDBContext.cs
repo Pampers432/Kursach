@@ -21,9 +21,7 @@ namespace Kursach
             {
                 optionsBuilder.UseSqlite($"Data Source={DatabasePath}");
             }
-        }
-
-        
+        }        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -42,7 +40,6 @@ namespace Kursach
                 db.Database.EnsureCreated(); 
             }
         }
-
 
         public static void CreateTables(Location location, Village village, Monument monument, Ghetto ghetto, MassGrave massGrave, Victim victim)
         {

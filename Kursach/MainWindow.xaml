@@ -46,6 +46,12 @@
        HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1080,341,0,0"
        ToolTip="Деревня Водица (уничтожена 15.05.1943, 63 жителя)"/>
 
+        <!-- Деревня Заболотье -->
+        <Image x:Name="Заболотье" Width="24" Height="25" Source="/Images/Village.png"
+       MouseDown="Заболотье_Click" Cursor="Hand" Stretch="Uniform"
+       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1028,49,0,0"
+       ToolTip="Деревня Заболотье (уничтожена 19.02.1943, 78 жителей)"/>
+
         <!-- Мемориалы -->
         <Image x:Name="Мемориал_Хатынь" Width="25" Height="25" Source="/Images/Monument.png"
        MouseDown="МемориалХатынь_Click" Cursor="Hand" Stretch="Uniform"
@@ -63,6 +69,13 @@
        HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1080,323,0,0"
        ToolTip="Мемориал на месте деревни Водица (1966)"/>
 
+        <!-- Мемориал Заболотье -->
+        <Image x:Name="Мемориал_Заболотье" Width="25" Height="24" Source="/Images/Monument.png"
+       MouseDown="МемориалЗаболотье_Click" Cursor="Hand" Stretch="Uniform"
+       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1036,32,0,0"
+       ToolTip="Мемориал 'Память земли Заболотской' (1968)"/>
+
+
         <!-- Братские могилы -->
         <Image x:Name="Братская_Могила_При_Каменецке" Width="25" Height="25" Source="/Images/MassGrave.png"
        MouseDown="БратскаяМогилаПриКаменецке_Click" Cursor="Hand" Stretch="Uniform"
@@ -78,6 +91,12 @@
        MouseDown="БратскаяМогилаБатуринка_Click" Cursor="Hand" Stretch="Uniform"
        HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1253,446,0,0"
        ToolTip="Братская могила 80 жителей д. Батуринка"/>
+
+        <!-- Братская могила Заболотье -->
+        <Image x:Name="Братская_Могила_Заболотье" Width="26" Height="25" Source="/Images/MassGrave.png"
+       MouseDown="БратскаяМогилаЗаболотье_Click" Cursor="Hand" Stretch="Uniform"
+       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1044,46,0,0"
+       ToolTip="Братская могила 78 жителей д. Заболотье"/>
 
         <!-- Братская могила Водица -->
         <Image x:Name="Братская_Могила_Водица" Width="24" Height="25" Source="/Images/MassGrave.png"

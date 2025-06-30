@@ -194,12 +194,15 @@ namespace Kursach
             MoveToDisplay(3, "Деревня");
         }
 
-        // Деревня Водица
         private void Водица_Click(object sender, MouseButtonEventArgs e)
         {
-            MoveToDisplay(4, "Деревня"); // Предполагая, что у Водицы Id=4
+            MoveToDisplay(4, "Деревня");
         }
 
+        private void Заболотье_Click(object sender, MouseButtonEventArgs e)
+        {
+            MoveToDisplay(5, "Деревня"); 
+        }
 
         // Мемориалы
         private void МемориалХатынь_Click(object sender, MouseButtonEventArgs e)
@@ -212,10 +215,14 @@ namespace Kursach
             MoveToDisplay(2, "Монумент");
         }
 
-        // Мемориал Водица
         private void МемориалВодица_Click(object sender, MouseButtonEventArgs e)
         {
-            MoveToDisplay(3, "Монумент"); // Предполагая, что у мемориала Id=3
+            MoveToDisplay(3, "Монумент"); 
+        }
+
+        private void МемориалЗаболотье_Click(object sender, MouseButtonEventArgs e)
+        {    
+            MoveToDisplay(4, "Монумент"); 
         }
 
         // Гетто
@@ -240,10 +247,14 @@ namespace Kursach
             MoveToDisplay(3, "Могила");
         }
 
-        // Братская могила Водица
         private void БратскаяМогилаВодица_Click(object sender, MouseButtonEventArgs e)
         {
-            MoveToDisplay(4, "Могила"); // Предполагая, что у могилы Id=4
+            MoveToDisplay(4, "Могила"); 
+        }
+
+        private void БратскаяМогилаЗаболотье_Click(object sender, MouseButtonEventArgs e)
+        { 
+            MoveToDisplay(5, "Могила"); 
         }
 
 
