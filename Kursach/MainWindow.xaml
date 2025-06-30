@@ -25,6 +25,7 @@
         <Button Content="Жертвы" Margin="273,795,1046,28" FontSize="16" Click="VictimsButton_Click" Background="#88CFAC"/>
 
         <!-- Деревни -->
+        <!-- Деревни -->
         <Image x:Name="Хатынь" Width="25" Height="25" Source="/Images/Village.png"
        MouseDown="Хатынь_Click" Cursor="Hand" Stretch="Uniform"
        HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1020,299,0,0"
@@ -53,6 +54,7 @@
        ToolTip="Деревня Заболотье (уничтожена 19.02.1943, 78 жителей)"/>
 
         <!-- Мемориалы -->
+        <!-- Мемориалы -->
         <Image x:Name="Мемориал_Хатынь" Width="25" Height="25" Source="/Images/Monument.png"
        MouseDown="МемориалХатынь_Click" Cursor="Hand" Stretch="Uniform"
        HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1034,293,0,0"
@@ -76,6 +78,7 @@
        ToolTip="Мемориал 'Память земли Заболотской' (1968)"/>
 
 
+        <!-- Братские могилы -->
         <!-- Братские могилы -->
         <Image x:Name="Братская_Могила_При_Каменецке" Width="25" Height="25" Source="/Images/MassGrave.png"
        MouseDown="БратскаяМогилаПриКаменецке_Click" Cursor="Hand" Stretch="Uniform"
@@ -105,10 +108,35 @@
        ToolTip="Братская могила 63 жителей д. Водица"/>
 
         <!-- Еврейские гетто -->
+        <!-- Еврейские гетто -->
         <Image x:Name="Полоцкое_Гетто" Width="25" Height="25" Source="/Images/Ghetto.png"
        MouseDown="ПолоцкоеГетто_Click" Cursor="Hand" Stretch="Uniform"
        HorizontalAlignment="Left" VerticalAlignment="Top" Margin="585,680,0,0"
        ToolTip="Место расположения Полоцкого гетто (10.07.1941-28.02.1942)"/>
+
+        <!-- Минское гетто -->
+        <Image x:Name="Минское_Гетто" Width="25" Height="26" Source="/Images/Ghetto.png"
+       MouseDown="МинскоеГетто_Click" Cursor="Hand" Stretch="Uniform"
+       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="987,382,0,0"
+       ToolTip="Минское гетто (1941-1943, ~100 000 жертв)"/>
+
+        <!-- Брестское гетто -->
+        <Image x:Name="Брестское_Гетто" Width="25" Height="24" Source="/Images/Ghetto.png"
+       MouseDown="БрестскоеГетто_Click" Cursor="Hand" Stretch="Uniform"
+       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="585,712,0,0"
+       ToolTip="Брестское гетто (1941-1942, ~20 000 жертв)"/>
+
+        <!-- Смолевичское гетто -->
+        <Image x:Name="Смолевичское_Гетто" Width="25" Height="25" Source="/Images/Ghetto.png"
+       MouseDown="СмолевичскоеГетто_Click" Cursor="Hand" Stretch="Uniform"
+       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1043,372,0,0"
+       ToolTip="Смолевичское гетто (1941, ~2 000 жертв)"/>
+
+        <!-- Давид-Городокское гетто -->
+        <Image x:Name="ДавидГородокское_Гетто" Width="26" Height="25" Source="/Images/Ghetto.png"
+       MouseDown="ДавидГородокскоеГетто_Click" Cursor="Hand" Stretch="Uniform"
+       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="947,711,0,0"
+       ToolTip="Давид-Городокское гетто (1941-1942, ~4 300 жертв)"/>
 
         <!-- Поле поиска -->
         <Rectangle HorizontalAlignment="Left" Height="50" Margin="23,14,0,0" Fill="#88CFAC"

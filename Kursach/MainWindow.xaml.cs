@@ -40,14 +40,16 @@ namespace Kursach
                 Хатынь,
                 Багута,
                 Батуринка,
-                Водица // Добавляем новую деревню
+                Водица,
+                Заболотье
             };
 
             Monuments = new List<Image>
             {
                 Мемориал_Хатынь,
                 Мемориал_Батуринка,
-                Мемориал_Водица // Добавляем новый мемориал
+                Мемориал_Водица,
+                Мемориал_Заболотье
             };
 
             MassGraves = new List<Image>
@@ -55,12 +57,17 @@ namespace Kursach
                 Братская_Могила_При_Каменецке,
                 Братская_Могила_Багута,
                 Братская_Могила_Батуринка,
-                Братская_Могила_Водица // Добавляем новую могилу
+                Братская_Могила_Водица,
+                Братская_Могила_Заболотье
             };
 
             Ghettos = new List<Image>
             {
-                Полоцкое_Гетто
+                Полоцкое_Гетто,
+                Минское_Гетто,  
+                Брестское_Гетто,  
+                Смолевичское_Гетто,
+                ДавидГородокское_Гетто 
             };
 
             AllImgs = Villages
@@ -230,6 +237,14 @@ namespace Kursach
         {
             MoveToDisplay(1, "Гетто");
         }
+
+        private void МинскоеГетто_Click(object sender, MouseButtonEventArgs e) => MoveToDisplay(2, "Гетто");
+
+        private void БрестскоеГетто_Click(object sender, MouseButtonEventArgs e) => MoveToDisplay(3, "Гетто");
+
+        private void СмолевичскоеГетто_Click(object sender, MouseButtonEventArgs e) => MoveToDisplay(4, "Гетто");
+
+        private void ДавидГородокскоеГетто_Click(object sender, MouseButtonEventArgs e) => MoveToDisplay(5, "Гетто");
 
         // Брасткие могилы
         private void БратскаяМогилаПриКаменецке_Click(object sender, MouseButtonEventArgs e)
