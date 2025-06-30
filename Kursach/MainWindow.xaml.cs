@@ -39,7 +39,23 @@ namespace Kursach
             {
                 Хатынь,
                 Багута,
-                Батуринка
+                Батуринка,
+                Водица // Добавляем новую деревню
+            };
+
+            Monuments = new List<Image>
+            {
+                Мемориал_Хатынь,
+                Мемориал_Батуринка,
+                Мемориал_Водица // Добавляем новый мемориал
+            };
+
+            MassGraves = new List<Image>
+            {
+                Братская_Могила_При_Каменецке,
+                Братская_Могила_Багута,
+                Братская_Могила_Батуринка,
+                Братская_Могила_Водица // Добавляем новую могилу
             };
 
             Ghettos = new List<Image>
@@ -47,24 +63,11 @@ namespace Kursach
                 Полоцкое_Гетто
             };
 
-            MassGraves = new List<Image>
-            {
-                Братская_Могила_При_Каменецке,
-                Братская_Могила_Багута,
-                Братская_Могила_Батуринка
-            };
-            Monuments = new List<Image>
-            {
-                Мемориал_Хатынь,
-                Мемориал_Батуринка
-            };
-
             AllImgs = Villages
                         .Concat(Ghettos)
                         .Concat(MassGraves)
                         .Concat(Monuments)
                         .ToList();
-
         }
         
         // Выход
@@ -191,6 +194,13 @@ namespace Kursach
             MoveToDisplay(3, "Деревня");
         }
 
+        // Деревня Водица
+        private void Водица_Click(object sender, MouseButtonEventArgs e)
+        {
+            MoveToDisplay(4, "Деревня"); // Предполагая, что у Водицы Id=4
+        }
+
+
         // Мемориалы
         private void МемориалХатынь_Click(object sender, MouseButtonEventArgs e)
         {
@@ -200,6 +210,12 @@ namespace Kursach
         private void МемориалБатуринка_Click(object sender, MouseButtonEventArgs e)
         {
             MoveToDisplay(2, "Монумент");
+        }
+
+        // Мемориал Водица
+        private void МемориалВодица_Click(object sender, MouseButtonEventArgs e)
+        {
+            MoveToDisplay(3, "Монумент"); // Предполагая, что у мемориала Id=3
         }
 
         // Гетто
@@ -222,6 +238,12 @@ namespace Kursach
         private void БратскаяМогилаБатуринка_Click(object sender, MouseButtonEventArgs e)
         {
             MoveToDisplay(3, "Могила");
+        }
+
+        // Братская могила Водица
+        private void БратскаяМогилаВодица_Click(object sender, MouseButtonEventArgs e)
+        {
+            MoveToDisplay(4, "Могила"); // Предполагая, что у могилы Id=4
         }
 
 
