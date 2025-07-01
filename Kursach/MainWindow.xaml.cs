@@ -35,30 +35,22 @@ namespace Kursach
             InitializeComponent();
             MyDBContext.InitializeDatabase();
 
+            // В конструкторе:
             Villages = new List<Image>
             {
-                Хатынь,
-                Багута,
-                Батуринка,
-                Водица,
-                Заболотье
+                Хатынь, Багута, Батуринка, Водица, Заболотье, Туры, Сухой_Остров, Терюха
             };
-
-            Monuments = new List<Image>
-            {
-                Мемориал_Хатынь,
-                Мемориал_Батуринка,
-                Мемориал_Водица,
-                Мемориал_Заболотье
-            };
-
-            MassGraves = new List<Image>
+            Monuments = new List<Image> { Мемориал_Хатынь, Мемориал_Батуринка, Мемориал_Водица, Мемориал_Заболотье, Мемориал_Туры };
+            MassGraves = new List<Image> 
             {
                 Братская_Могила_При_Каменецке,
                 Братская_Могила_Багута,
                 Братская_Могила_Батуринка,
                 Братская_Могила_Водица,
-                Братская_Могила_Заболотье
+                Братская_Могила_Заболотье,
+                Братская_Могила_Туры,
+                Братская_Могила_Сухой_Остров,
+                Братская_Могила_Терюха
             };
 
             Ghettos = new List<Image>
@@ -211,6 +203,16 @@ namespace Kursach
             MoveToDisplay(5, "Деревня"); 
         }
 
+        private void Туры_Click(object sender, MouseButtonEventArgs e) => MoveToDisplay(6, "Деревня");
+
+        private void СухойОстров_Click(object sender, MouseButtonEventArgs e) => MoveToDisplay(7, "Деревня");
+
+        private void Терюха_Click(object sender, MouseButtonEventArgs e) => MoveToDisplay(8, "Деревня");
+
+        private void Романовичи_Click(object sender, MouseButtonEventArgs e) => MoveToDisplay(9, "Деревня");
+
+        private void Прудок_Click(object sender, MouseButtonEventArgs e) => MoveToDisplay(12, "Деревня");
+
         // Мемориалы
         private void МемориалХатынь_Click(object sender, MouseButtonEventArgs e)
         {
@@ -231,6 +233,8 @@ namespace Kursach
         {    
             MoveToDisplay(4, "Монумент"); 
         }
+
+        private void МемориалТуры_Click(object sender, MouseButtonEventArgs e) => MoveToDisplay(5, "Монумент");
 
         // Гетто
         private void ПолоцкоеГетто_Click(object sender, MouseButtonEventArgs e)
@@ -271,6 +275,16 @@ namespace Kursach
         { 
             MoveToDisplay(5, "Могила"); 
         }
+
+        private void БратскаяМогилаТуры_Click(object sender, MouseButtonEventArgs e) => MoveToDisplay(6, "Могила");
+
+        private void БратскаяМогилаСухойОстров_Click(object sender, MouseButtonEventArgs e) => MoveToDisplay(7, "Могила");
+
+        private void БратскаяМогилаТерюха_Click(object sender, MouseButtonEventArgs e) => MoveToDisplay(8, "Могила");
+
+        private void БратскаяМогилаРомановичи_Click(object sender, MouseButtonEventArgs e) => MoveToDisplay(9, "Могила");
+
+        private void БратскаяМогилаПрудок_Click(object sender, MouseButtonEventArgs e) => MoveToDisplay(10, "Могила");
 
 
         // Переход между формами
