@@ -25,6 +25,7 @@
         <Button Content="Жертвы" Margin="273,795,1046,28" FontSize="16" Click="VictimsButton_Click" Background="#88CFAC"/>
 
         <!-- Деревни -->
+        <!-- Деревни -->
         <Image x:Name="Хатынь" Width="25" Height="25" Source="/Images/Village.png"
        MouseDown="Хатынь_Click" Cursor="Hand" Stretch="Uniform"
        HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1020,299,0,0"
@@ -41,9 +42,9 @@
        ToolTip="Деревня Батуринка (уничтожена в 22.03.1943)"/>
 
         <!-- Деревня Водица -->
-        <Image x:Name="Водица" Width="25" Height="25" Source="/Images/Village.png"
+        <Image x:Name="Водица" Width="26" Height="25" Source="/Images/Village.png"
        MouseDown="Водица_Click" Cursor="Hand" Stretch="Uniform"
-       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1080,341,0,0"
+       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1092,329,0,0"
        ToolTip="Деревня Водица (уничтожена 15.05.1943, 63 жителя)"/>
 
         <!-- Деревня Заболотье -->
@@ -52,6 +53,36 @@
        HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1028,49,0,0"
        ToolTip="Деревня Заболотье (уничтожена 19.02.1943, 78 жителей)"/>
 
+        <!-- Деревня Туры -->
+        <Image x:Name="Туры" Width="24" Height="25" Source="/Images/Village.png"
+       MouseDown="Туры_Click" Cursor="Hand" Stretch="Uniform"
+       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="995,713,0,0"
+       ToolTip="Деревня Туры (уничтожена 15.01.1943, 33 жителя)"/>
+
+        <!-- Деревня Сухой Остров -->
+        <Image x:Name="Сухой_Остров" Width="25" Height="25" Source="/Images/Village.png"
+       MouseDown="СухойОстров_Click" Cursor="Hand" Stretch="Uniform"
+       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1055,347,0,0"
+       ToolTip="Деревня Сухой Остров (уничтожена 09.04.1943)"/>
+
+        <!-- Деревня Терюха -->
+        <Image x:Name="Терюха" Width="24" Height="26" Source="/Images/Village.png"
+       MouseDown="Терюха_Click"  Cursor="Hand" Stretch="Uniform"
+       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1328,686,0,0"
+       ToolTip="Деревня Терюха (уничтожена 27.09.1943)"/>
+
+        <Image x:Name="Романовичи" Width="24" Height="26" Source="/Images/Village.png" 
+       MouseDown="Романовичи_Click" Cursor="Hand" Stretch="Uniform"
+       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1361,637,0,0" 
+       ToolTip="Деревня Романовичи (уничтожена в 1943 г.)"/>
+
+        <Image x:Name="Прудок" Width="24" Height="26" Source="/Images/Village.png"
+       MouseDown="Прудок_Click" Cursor="Hand" Stretch="Uniform"
+       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1316,638,0,0"
+       ToolTip="Деревня Прудок (расстрел 12 заложников в ноябре 1941)"
+       />
+
+        <!-- Мемориалы -->
         <!-- Мемориалы -->
         <Image x:Name="Мемориал_Хатынь" Width="25" Height="25" Source="/Images/Monument.png"
        MouseDown="МемориалХатынь_Click" Cursor="Hand" Stretch="Uniform"
@@ -64,9 +95,9 @@
        ToolTip="Мемориал 'Плач зямлі Батурынскай' (01.09.1972)"/>
 
         <!-- Мемориал Водица -->
-        <Image x:Name="Мемориал_Водица" Width="25" Height="25" Source="/Images/Monument.png"
+        <Image x:Name="Мемориал_Водица" Width="25" Height="24" Source="/Images/Monument.png"
        MouseDown="МемориалВодица_Click" Cursor="Hand" Stretch="Uniform"
-       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1080,323,0,0"
+       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1086,312,0,0"
        ToolTip="Мемориал на месте деревни Водица (1966)"/>
 
         <!-- Мемориал Заболотье -->
@@ -75,7 +106,14 @@
        HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1036,32,0,0"
        ToolTip="Мемориал 'Память земли Заболотской' (1968)"/>
 
+        <!-- Мемориал Туры -->
+        <Image x:Name="Мемориал_Туры" Width="25" Height="25" Source="/Images/Monument.png"
+       MouseDown="МемориалТуры_Click" Cursor="Hand" Stretch="Uniform"
+       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="977,712,0,0"
+       ToolTip="Памятник жертвам деревни Туры (1971)"/>
 
+
+        <!-- Братские могилы -->
         <!-- Братские могилы -->
         <Image x:Name="Братская_Могила_При_Каменецке" Width="25" Height="25" Source="/Images/MassGrave.png"
        MouseDown="БратскаяМогилаПриКаменецке_Click" Cursor="Hand" Stretch="Uniform"
@@ -101,14 +139,68 @@
         <!-- Братская могила Водица -->
         <Image x:Name="Братская_Могила_Водица" Width="24" Height="25" Source="/Images/MassGrave.png"
        MouseDown="БратскаяМогилаВодица_Click" Cursor="Hand" Stretch="Uniform"
-       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1068,329,0,0"
+       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1074,329,0,0"
        ToolTip="Братская могила 63 жителей д. Водица"/>
 
+        <!-- Братская могила Туры -->
+        <Image x:Name="Братская_Могила_Туры" Width="25" Height="26" Source="/Images/MassGrave.png"
+       MouseDown="БратскаяМогилаТуры_Click" Cursor="Hand" Stretch="Uniform"
+       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="987,698,0,0"
+       ToolTip="Братская могила 33 жителей д. Туры"/>
+
+        <!-- Братская могила Сухой Остров -->
+        <Image x:Name="Братская_Могила_Сухой_Остров" Width="25" Height="25" Source="/Images/MassGrave.png"
+       MouseDown="БратскаяМогилаСухойОстров_Click" Cursor="Hand" Stretch="Uniform"
+       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1068,362,0,0"
+       ToolTip="Братская могила 40 жителей д. Сухой Остров"/>
+
+        <!-- Братская могила Терюха -->
+        <Image x:Name="Братская_Могила_Терюха" Width="25" Height="26" Source="/Images/MassGrave.png"
+       MouseDown="БратскаяМогилаТерюха_Click" Cursor="Hand" Stretch="Uniform"
+       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1340,692,0,0"
+       ToolTip="Братская могила 42 жителей д. Терюха"/>
+
+        <!-- Братская могила Романовичи -->
+        <Image x:Name="Братская_Могила_Романовичи"  Width="25" Height="25"  Source="/Images/MassGrave.png"
+       MouseDown="БратскаяМогилаРомановичи_Click" Cursor="Hand" Stretch="Uniform"
+       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1372,649,0,0"
+       ToolTip="Братская могила 83 жителей д. Романовичи (1943)"/>
+
+        <Image x:Name="Братская_Могила_Прудок"  Width="25" Height="26" Source="/Images/MassGrave.png"
+       MouseDown="БратскаяМогилаПрудок_Click" Cursor="Hand" Stretch="Uniform"
+       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1327,634,0,0"
+       ToolTip="Братская могила 12 жителей Прудка"/>
+
+        <!-- Еврейские гетто -->
         <!-- Еврейские гетто -->
         <Image x:Name="Полоцкое_Гетто" Width="25" Height="25" Source="/Images/Ghetto.png"
        MouseDown="ПолоцкоеГетто_Click" Cursor="Hand" Stretch="Uniform"
        HorizontalAlignment="Left" VerticalAlignment="Top" Margin="585,680,0,0"
        ToolTip="Место расположения Полоцкого гетто (10.07.1941-28.02.1942)"/>
+
+        <!-- Минское гетто -->
+        <Image x:Name="Минское_Гетто" Width="25" Height="26" Source="/Images/Ghetto.png"
+       MouseDown="МинскоеГетто_Click" Cursor="Hand" Stretch="Uniform"
+       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="987,382,0,0"
+       ToolTip="Минское гетто (1941-1943, ~100 000 жертв)"/>
+
+        <!-- Брестское гетто -->
+        <Image x:Name="Брестское_Гетто" Width="25" Height="24" Source="/Images/Ghetto.png"
+       MouseDown="БрестскоеГетто_Click" Cursor="Hand" Stretch="Uniform"
+       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="585,712,0,0"
+       ToolTip="Брестское гетто (1941-1942, ~20 000 жертв)"/>
+
+        <!-- Смолевичское гетто -->
+        <Image x:Name="Смолевичское_Гетто" Width="25" Height="25" Source="/Images/Ghetto.png"
+       MouseDown="СмолевичскоеГетто_Click" Cursor="Hand" Stretch="Uniform"
+       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1043,372,0,0"
+       ToolTip="Смолевичское гетто (1941, ~2 000 жертв)"/>
+
+        <!-- Давид-Городокское гетто -->
+        <Image x:Name="ДавидГородокское_Гетто" Width="26" Height="25" Source="/Images/Ghetto.png"
+       MouseDown="ДавидГородокскоеГетто_Click" Cursor="Hand" Stretch="Uniform"
+       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="926,705,0,0"
+       ToolTip="Давид-Городокское гетто (1941-1942, ~4 300 жертв)"/>
 
         <!-- Поле поиска -->
         <Rectangle HorizontalAlignment="Left" Height="50" Margin="23,14,0,0" Fill="#88CFAC"

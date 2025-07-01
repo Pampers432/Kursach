@@ -181,7 +181,7 @@ namespace Kursach
         }
 
         // <summary>
-        // Получение информаци о Монументе
+        // Получение информаци о Гетто
         // <summary>
         private void DisplayGhettoInfo(int id)
         {

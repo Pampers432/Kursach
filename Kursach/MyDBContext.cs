@@ -103,6 +103,27 @@ namespace Kursach
                 db.Victims.Add(victim);
                 db.SaveChanges();
             }
-        }        
+        }
+
+        private static MassGrave FindMassGrave(string name)
+        {
+            using (var db = new MyDBContext())
+            {
+                return db.MassGraves.FirstOrDefault(mg => mg.Name == name);
+            }
+        }
+
+        private static Ghetto FindGhetto(string name)
+        {
+            using (var db = new MyDBContext())
+            {
+                return db.Ghettos.FirstOrDefault(g => g.Name == name);
+            }
+        }
+
+        public static void addPrudok()
+        {
+           
+        }
     }
 }
