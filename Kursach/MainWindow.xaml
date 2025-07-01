@@ -79,8 +79,13 @@
         <Image x:Name="Прудок" Width="24" Height="26" Source="/Images/Village.png"
        MouseDown="Прудок_Click" Cursor="Hand" Stretch="Uniform"
        HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1316,638,0,0"
-       ToolTip="Деревня Прудок (расстрел 12 заложников в ноябре 1941)"
-       />
+       ToolTip="Деревня Прудок (расстрел 12 заложников в ноябре 1941)"/>
+
+        <!-- Деревня Шауличи -->
+        <Image x:Name="Шауличи" Width="24" Height="26" Source="/Images/Village.png"
+       MouseDown="Шауличи_Click" Cursor="Hand" Stretch="Uniform"
+       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="638,505,0,0"
+       ToolTip="Деревня Шауличи (уничтожена 07.07.1943, 336 жертв)"/>
 
         <!-- Мемориалы -->
         <!-- Мемориалы -->
@@ -111,6 +116,12 @@
        MouseDown="МемориалТуры_Click" Cursor="Hand" Stretch="Uniform"
        HorizontalAlignment="Left" VerticalAlignment="Top" Margin="977,712,0,0"
        ToolTip="Памятник жертвам деревни Туры (1971)"/>
+
+        <!-- Метка мемориала -->
+        <Image x:Name="Мемориал_Шауличи" Width="25" Height="25" Source="/Images/Monument.png"
+       Cursor="Hand" MouseDown="МемориалШауличи_Click" Stretch="Uniform"
+       HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="650,529,0,0" 
+       ToolTip="Мемориал «Шауличи» (1954)"/>
 
 
         <!-- Братские могилы -->
@@ -170,6 +181,23 @@
        MouseDown="БратскаяМогилаПрудок_Click" Cursor="Hand" Stretch="Uniform"
        HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1327,634,0,0"
        ToolTip="Братская могила 12 жителей Прудка"/>
+
+        <!-- Братские могилы Шаулич -->
+        <Image x:Name="Братская_Могила_Шауличи_Мужчины" 
+       Width="24" Height="25" Source="/Images/MassGrave.png"
+       MouseDown="БратскаяМогилаШауличиМужчины_Click" 
+       Cursor="Hand" Stretch="Uniform"
+       HorizontalAlignment="Left" VerticalAlignment="Top" 
+       Margin="638,523,0,0"
+       ToolTip="Братская могила №5983 (Шауличи, 186 мужчин, 07.07.1943)"/>
+
+        <Image x:Name="Братская_Могила_Шауличи_ЖенщиныДети" 
+       Width="24" Height="26" Source="/Images/MassGrave.png"
+       MouseDown="БратскаяМогилаШауличиЖенщиныДети_Click" 
+       Cursor="Hand" Stretch="Uniform"
+       HorizontalAlignment="Left" VerticalAlignment="Top" 
+       Margin="651,511,0,0"
+       ToolTip="Братская могила №5984 (Шауличи, 180 женщин и детей, 07.07.1943)"/>
 
         <!-- Еврейские гетто -->
         <!-- Еврейские гетто -->

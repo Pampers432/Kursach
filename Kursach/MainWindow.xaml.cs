@@ -50,7 +50,9 @@ namespace Kursach
                 Братская_Могила_Заболотье,
                 Братская_Могила_Туры,
                 Братская_Могила_Сухой_Остров,
-                Братская_Могила_Терюха
+                Братская_Могила_Терюха,
+                Братская_Могила_Шауличи_Мужчины,
+                Братская_Могила_Шауличи_ЖенщиныДети
             };
 
             Ghettos = new List<Image>
@@ -68,7 +70,44 @@ namespace Kursach
                         .Concat(Monuments)
                         .ToList();
         }
-        
+
+        public static void addShau()
+        {
+            using (var db = new MyDBContext())
+            {
+                var massGraveMen = new MassGrave
+                {
+                    Location_Id = 21,
+                    Name = "Братская могила №5983 (Шауличи)",
+                    InstallationDate = new DateTime(1943, 7, 7),
+                    VictimsCount = 186,
+                    Description = "Захоронение мужчин деревни Шауличи, расстрелянных 7 июля 1943 года. " +
+                  "Эксгумация 1944 года установила: большинство жертв имели огнестрельные ранения в голову.",
+                    ImagePath = "Images/Шауличи_могила1.png",
+                    Cause = "Память жертвам Шауличи"
+                };
+
+                var massGraveWomen = new MassGrave
+                {
+                    Location_Id = 21,
+                    Name = "Братская могила №5984 (Шауличи)",
+                    InstallationDate = new DateTime(1943, 7, 7),
+                    VictimsCount = 180,
+                    Description = "Захоронение женщин и детей деревни Шауличи. При эксгумации обнаружены: " +
+                  "- Обгоревшие останки детей с игрушками\n" +
+                  "- Украшения и расчески\n" +
+                  "- Пули калибра 9 мм (использовались в MP-40)",
+                    ImagePath = "Images/Шауличи_могила2.png",
+                    Cause = "Память жертвам Шауличи"
+                };
+
+                db.MassGraves.Add(massGraveMen);
+                db.MassGraves.Add(massGraveWomen);
+
+                db.SaveChanges();
+            }
+        }
+
         // Выход
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
@@ -213,6 +252,9 @@ namespace Kursach
 
         private void Прудок_Click(object sender, MouseButtonEventArgs e) => MoveToDisplay(12, "Деревня");
 
+        private void Шауличи_Click(object sender, MouseButtonEventArgs e) => MoveToDisplay(13, "Деревня");
+
+
         // Мемориалы
         private void МемориалХатынь_Click(object sender, MouseButtonEventArgs e)
         {
@@ -235,6 +277,9 @@ namespace Kursach
         }
 
         private void МемориалТуры_Click(object sender, MouseButtonEventArgs e) => MoveToDisplay(5, "Монумент");
+
+        private void МемориалШауличи_Click(object sender, MouseButtonEventArgs e) => MoveToDisplay(6, "Монумент");
+
 
         // Гетто
         private void ПолоцкоеГетто_Click(object sender, MouseButtonEventArgs e)
@@ -286,6 +331,12 @@ namespace Kursach
 
         private void БратскаяМогилаПрудок_Click(object sender, MouseButtonEventArgs e) => MoveToDisplay(10, "Могила");
 
+        private void БратскаяМогилаШауличиМужчины_Click(object sender, MouseButtonEventArgs e)
+    => MoveToMassGrave("Братская могила №5983 (Шауличи)");
+
+        private void БратскаяМогилаШауличиЖенщиныДети_Click(object sender, MouseButtonEventArgs e)
+            => MoveToMassGrave("Братская могила №5984 (Шауличи)");
+
 
         // Переход между формами
         private void MoveToDisplay(int id, string tableName)
@@ -304,6 +355,16 @@ namespace Kursach
 
             if (victims.IsReturningToMain)
                 Show();
+        }
+
+        private void MoveToMassGrave(string name)
+        {
+            using (var db = new MyDBContext())
+            {
+                var grave = db.MassGraves.FirstOrDefault(mg => mg.Name == name);
+                if (grave != null)
+                    MoveToDisplay(grave.Id, "Могила");
+            }
         }
     }
 }
